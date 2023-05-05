@@ -7,6 +7,7 @@ import welcomePlaces from '../assets/welcomePlaces.jpg';
 import welcomeEvents from '../assets/welcomeEvents.jpg';
 import welcomeShop from '../assets/welcomeShop.jpg';
 import devil from '../assets/devil.jpg';
+import map from '../assets/map.png';
 
 export default {
     bg,
@@ -17,4 +18,5 @@ export default {
     welcomeEvents,
     welcomeShop,
     devil,
+    map,
 };

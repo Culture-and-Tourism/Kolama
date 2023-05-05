@@ -7,6 +7,7 @@ import PlaceHeader from './components/PlaceHeader/PlaceHeader.jsx';
 import EventHeader from './components/EventHeader/EventHeader.jsx';
 import ShopHeader from './components/ShopHeader/ShopHeader.jsx';
 import AboutUs from './container/AboutUs/AboutUs';
+import SriLanka from './container/SriLanka/SriLanka';
 
 const App = () => (
   <div>
@@ -16,6 +17,7 @@ const App = () => (
     <EventHeader />
     <ShopHeader />
     <AboutUs />
+    <SriLanka />
   </div>
 );
 
