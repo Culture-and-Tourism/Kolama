@@ -8,6 +8,8 @@ import EventHeader from './components/EventHeader/EventHeader.jsx';
 import ShopHeader from './components/ShopHeader/ShopHeader.jsx';
 import AboutUs from './container/AboutUs/AboutUs';
 import SriLanka from './container/SriLanka/SriLanka';
+import Team from './container/Team/Team';
+import Intro from './container/Intro/Intro';
 
 const App = () => (
   <div>
@@ -18,6 +20,8 @@ const App = () => (
     <ShopHeader />
     <AboutUs />
     <SriLanka />
+    <Team />
+    <Intro />
   </div>
 );
 
