@@ -8,6 +8,8 @@ import welcomeEvents from '../assets/welcomeEvents.jpg';
 import welcomeShop from '../assets/welcomeShop.jpg';
 import devil from '../assets/devil.jpg';
 import map from '../assets/map.png';
+import quote from '../assets/quote.png';
+import team from '../assets/team.webp';
 
 export default {
     bg,
@@ -19,4 +21,6 @@ export default {
     welcomeShop,
     devil,
     map,
+    quote,
+    team,
 };
