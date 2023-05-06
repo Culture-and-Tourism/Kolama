@@ -15,7 +15,7 @@ const Navbar = () => {
                 <img src={images.mask} alt="app__logo" />
             </div>
             <ul className="app__navbar-links">
-                <li className="p__opensans"><a href="#home">Home</a></li>
+                <li className="p__opensans"><a href="/">Home</a></li>
                 <li className="p__opensans"><a href="#arts">Arts</a></li>
                 <li className="p__opensans"><a href="#discover">Discover</a></li>
                 <li className="p__opensans"><a href="#event">Event</a></li>
