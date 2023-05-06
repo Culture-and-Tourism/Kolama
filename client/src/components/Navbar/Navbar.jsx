@@ -23,7 +23,7 @@ const Navbar = () => {
             </ul>
             <div className="app__navbar-login">
                 <a href="#login" className="p__opensans">Log In / Registration</a>
-                <div />
+               
                 <a href="/" className="p__opensans">Event Table</a>
                 <div className="p__opensans">
                 <Link to='/cart'>

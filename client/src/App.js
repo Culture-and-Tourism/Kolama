@@ -12,6 +12,7 @@ import AboutUs from './container/AboutUs/AboutUs';
 import SriLanka from './container/SriLanka/SriLanka';
 import Team from './container/Team/Team';
 import Intro from './container/Intro/Intro';
+import Login from './components/Login/Login';
 import './App.css';
 import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
@@ -44,6 +45,7 @@ const App = () => (
           />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
           <Footer />
       </Router>
