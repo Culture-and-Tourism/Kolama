@@ -15,7 +15,7 @@
 }
 
 .app__navbar-logo img {
-    width: 150px;
+    width: 100px;
 }
 
 .app__navbar-links {
@@ -33,6 +33,7 @@
 
 .app__navbar-links li:hover {
     color: var(--color-grey);
+    border-bottom: 1px solid var(--color-golden);
 }
 
 .app__navbar-login {
@@ -128,6 +129,6 @@
     }
 
     .app__navbar-logo img {
-        width: 110px;
+        width: 80px;
     }
 }
