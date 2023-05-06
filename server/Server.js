@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import authRoute from './routes/auth.route.js';
+import userRoute from './routes/user.route.js';
+
 
 const app = express();
 dotenv.config();
@@ -23,6 +25,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoute); 
+app.use('/api/users', userRoute);
+
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
