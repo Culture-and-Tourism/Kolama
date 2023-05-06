@@ -17,6 +17,8 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+import Art from './container/Arts Management/User/Art/Art';
+import Masks from './container/Arts Management/User/Masks/Masks';
 
 
 const App = () => (
@@ -42,6 +44,8 @@ const App = () => (
               </>
             }
           />
+          <Route path='/art' element={<Art />} />
+          <Route path='/mask' element={<Masks />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
