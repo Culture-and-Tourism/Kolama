@@ -17,22 +17,31 @@ import { ShopContextProvider } from './context/shop-context';
 
 const App = () => (
   <div>
-  <ShopContextProvider>
-    <Router>
-      <Navbar />
-       <ArtHeader />
-    <PlaceHeader />
-    <EventHeader />
-    <ShopHeader />
-    <AboutUs />
-    <SriLanka />
-    <Team />
-    <Intro />
-      <Routes>
-        <Route path='/shop' element={<Shop />} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
-    </Router>
+    <ShopContextProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <ArtHeader />
+                <PlaceHeader />
+                <EventHeader />
+                <ShopHeader />
+                <AboutUs />
+                <SriLanka />
+                <Intro />
+                <Team />
+              </>
+            }
+          />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </Router>
     </ShopContextProvider>
+  </div>
+);
 
 export default App;
