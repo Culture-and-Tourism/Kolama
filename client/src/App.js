@@ -10,6 +10,9 @@ import AboutUs from './container/AboutUs/AboutUs';
 import SriLanka from './container/SriLanka/SriLanka';
 import Team from './container/Team/Team';
 import Intro from './container/Intro/Intro';
+import Gallery from './container/Gallery/Gallery';
+import FindUs from './container/FindUs/FindUs';
+import Footer from './container/Footer/Footer';
 
 const App = () => (
   <div>
@@ -22,6 +25,9 @@ const App = () => (
     <SriLanka />
     <Team />
     <Intro />
+    <Gallery />
+    <FindUs />
+    <Footer />
   </div>
 );
 
