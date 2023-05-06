@@ -14,6 +14,10 @@ import Team from './container/Team/Team';
 import Intro from './container/Intro/Intro';
 import './App.css';
 import { ShopContextProvider } from './context/shop-context';
+import Gallery from './container/Gallery/Gallery';
+import FindUs from './container/FindUs/FindUs';
+import Footer from './container/Footer/Footer';
+
 
 const App = () => (
   <div>
@@ -31,14 +35,17 @@ const App = () => (
                 <ShopHeader />
                 <AboutUs />
                 <SriLanka />
-                <Intro />
                 <Team />
+                <Intro />
+                <Gallery />
+                <FindUs />
               </>
             }
           />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
+          <Footer />
       </Router>
     </ShopContextProvider>
   </div>
