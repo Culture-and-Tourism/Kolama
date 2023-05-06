@@ -1,8 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
-
+import authRoute from './routes/auth.route.js';
 
 const app = express();
 dotenv.config();
@@ -18,8 +19,10 @@ const connect = async () => {
     console.log(error);
   }
 };
-
+app.use(cors());
 app.use(express.json());
+
+app.use('/api/auth', authRoute); 
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
