@@ -1,7 +1,10 @@
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import { ShoppingCart } from 'phosphor-react';
 import { GiDualityMask } from 'react-icons/gi';
 import images from '../../constants/images';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -12,16 +15,21 @@ const Navbar = () => {
                 <img src={images.mask} alt="app__logo" />
             </div>
             <ul className="app__navbar-links">
-                <li className="p__opensans"><a href="#home">Home</a></li>
+                <li className="p__opensans"><a href="/">Home</a></li>
                 <li className="p__opensans"><a href="#arts">Arts</a></li>
                 <li className="p__opensans"><a href="#discover">Discover</a></li>
                 <li className="p__opensans"><a href="#event">Event</a></li>
-                <li className="p__opensans"><a href="#shop">Shop</a></li>
+                <li className="p__opensans"><a href="/shop">Shop</a></li>
             </ul>
             <div className="app__navbar-login">
                 <a href="#login" className="p__opensans">Log In / Registration</a>
                 <div />
                 <a href="/" className="p__opensans">Event Table</a>
+                <div className="p__opensans">
+                <Link to='/cart'>
+            <ShoppingCart size={32} />
+          </Link>
+                </div>
             </div>
             <div className="app__navbar-smallscreen">
                 <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
