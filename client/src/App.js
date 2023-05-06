@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Shop from './container/OrderManagement/User/shop/Shop';
@@ -12,14 +11,15 @@ import AboutUs from './container/AboutUs/AboutUs';
 import SriLanka from './container/SriLanka/SriLanka';
 import Team from './container/Team/Team';
 import Intro from './container/Intro/Intro';
-import './App.css';
+import Login from './components/Login/Login';
+import Register from './components/Registration/Register.jsx';
 import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
 import Art from './container/Arts Management/User/Art/Art';
 import Masks from './container/Arts Management/User/Masks/Masks';
-
+import './App.css';
 
 const App = () => (
   <div>
@@ -48,6 +48,8 @@ const App = () => (
           <Route path='/mask' element={<Masks />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
           <Footer />
       </Router>
