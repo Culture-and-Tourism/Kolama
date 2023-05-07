@@ -55,7 +55,8 @@
   width: 1px;
   height: 30px;
   background: var(--color-grey);
-  margin-right: 40px;
+  margin-right: 50px;
+  margin-left: 80px;
 }
 
 .app__navbar-smallscreen {
@@ -70,21 +71,56 @@
   height: 100vh;
   background: var(--color-black);
   transition: 0.5s ease;
-
   flex-direction: column;
   z-index: 5;
+}
+
+.app__navbar-login img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 .app__navbar-smallscreen_overlay .overlay__close {
   font-size: 27px;
   color: var(--color-golden);
   cursor: pointer;
-
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
+.userProfile .options {
+  position: absolute;
+  top: 40px;
+  right: -200px;
+  width: 146px;
+  height: 120px;
+  padding: 7px 5px 5px 0px;
+  border-radius: 20px;
+ 
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent black background */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(241, 234, 234);
+  font-weight: 300;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 1px;
+}
+.username {
+  font-size: 18px;
+  color: #fff;
+}
 .app__navbar-smallscreen_links {
   list-style: none;
 }
@@ -100,18 +136,6 @@
 
 .app__navbar-smallscreen_links li:hover {
   color: var(--color-white);
-}
-
-.dropdown-menu {
-    width: 300px;
-    position: absolute;
-    top: 80px;
-    list-style: none;
-   
-}
-
-.dropdown-menu li:hover {
-    border-bottom: 1px solid var(--color-golden);
 }
 
 @media screen and (min-width: 2000px) {
