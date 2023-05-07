@@ -19,6 +19,7 @@ import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
 import Art from './container/Arts Management/User/Art/Art';
 import Masks from './container/Arts Management/User/Masks/Masks';
+import EventHome from './container/EventManagement/Admin/EventHome';
 import './App.css';
 
 const App = () => (
@@ -44,12 +45,14 @@ const App = () => (
               </>
             }
           />
+
           <Route path='/art' element={<Art />} />
           <Route path='/mask' element={<Masks />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/event' element={<EventHome />} />
         </Routes>
           <Footer />
       </Router>

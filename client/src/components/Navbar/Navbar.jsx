@@ -9,6 +9,7 @@ import './Navbar.css';
 import Art from '../../container/Arts Management/User/Art/Art';
 import Masks from '../../container/Arts Management/User/Masks/Masks';
 import Dropdown from '../Dropdown/Dropdown';
+import EventHome from '../../container/EventManagement/Admin/EventHome';
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
                     {dropdown && <Dropdown />}
                 </li> 
                 <li className="p__opensans"><a href="#discover">Discover</a></li>
-                <li className="p__opensans"><a href="#event">Event</a></li>
+                <li className="p__opensans"><a href="/event">Event</a></li>
                 <li className="p__opensans"><a href="/shop">Shop</a></li>
             </ul>
             <div className="app__navbar-login">
