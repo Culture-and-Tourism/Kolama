@@ -2,8 +2,11 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './Login.css';
+import newRequest from "../../utils/newRequest";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   // Define Yup validation schema
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
@@ -11,10 +14,21 @@ const Login = () => {
   });
 
   // Handle form submission
-  const handleSubmit = (values, { setSubmitting }) => {
-    // You can perform your login logic here
-    console.log(values);
-    setSubmitting(false);
+  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+    try {
+      const res = await newRequest.post("/auth/login", {
+        email: values.email,
+        password: values.password,
+      });
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("currentUser", JSON.stringify(res.data.info));
+      navigate("/");
+    } catch (err) {
+      setErrors({ error: err.response.data });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
