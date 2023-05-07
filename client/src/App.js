@@ -20,6 +20,8 @@ import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
 
+
+
 import Add from './container/OrderManagement/Supplier/Add/Add';
 
 
@@ -28,6 +30,10 @@ import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
 
 import './App.css';
+import Masks from './container/Arts Management/User/Masks/Masks';
+import Art from './container/Arts Management/User/Art/Art.jsx';
+
+const queryClient = new QueryClient();
 
 const queryClient = new QueryClient();
 
@@ -93,18 +99,33 @@ const App = () => (
             }
           />
           <Route
+
+            path='/art'
+            element={
+              <>
+                <Art />
+
             path='/add'
             element={
               <>
                 <Add />
+
               </>
             }
           />
           <Route
+
+            path='/kolam'
+            element={
+              <>
+                <Masks />
+                <Footer />
+
             path='/event'
             element={
               <>
                 <EventHome />
+
               </>
             }
           />
