@@ -1,4 +1,6 @@
 import React from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Shop from './container/OrderManagement/User/shop/Shop';
@@ -17,15 +19,23 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+
+import Add from './container/OrderManagement/Supplier/Add/Add';
+
+
 import Art from './container/Arts Management/User/Art/Art';
 import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
+
 import './App.css';
 
+const queryClient = new QueryClient();
+
 const App = () => (
-  <div>
-    <ShopContextProvider>
-      <Router>
+  <ShopContextProvider>
+    <Router>
+      <QueryClientProvider client={queryClient}>
+        <ToastContainer></ToastContainer>
         <Navbar />
         <Routes>
           <Route
@@ -42,22 +52,66 @@ const App = () => (
                 <Intro />
                 <Gallery />
                 <FindUs />
+                <Footer />
               </>
             }
           />
-
-          <Route path='/art' element={<Art />} />
-          <Route path='/mask' element={<Masks />} />
-          <Route path='/shop' element={<Shop />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/event' element={<EventHome />} />
+          <Route
+            path='/shop'
+            element={
+              <>
+                <Shop />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/cart'
+            element={
+              <>
+                <Cart />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/register'
+            element={
+              <>
+                <Register />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/login'
+            element={
+              <>
+                <Login />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/add'
+            element={
+              <>
+                <Add />
+              </>
+            }
+          />
+          <Route
+            path='/event'
+            element={
+              <>
+                <EventHome />
+              </>
+            }
+          />
         </Routes>
-          <Footer />
-      </Router>
-    </ShopContextProvider>
-  </div>
+      </QueryClientProvider>
+    </Router>
+  </ShopContextProvider>
 );
 
 export default App;
