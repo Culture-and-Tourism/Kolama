@@ -19,7 +19,10 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+
 import Add from './container/OrderManagement/Supplier/Add/Add';
+import MyProduct from './container/OrderManagement/Supplier/MyProduct/MyProducts';
+
 
 import './App.css';
 
@@ -87,10 +90,18 @@ const App = () => (
             }
           />
           <Route
-            path='/add'
+            path='/supplier/add'
             element={
               <>
                 <Add />
+              </>
+            }
+          />
+            <Route
+            path='/myproduct'
+            element={
+              <>
+                <MyProduct />
               </>
             }
           />
