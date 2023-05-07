@@ -2,8 +2,9 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './Login.css';
-import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import newRequest from '../../utils/newRequest';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,19 +14,28 @@ const Login = () => {
     password: Yup.string().required('Password is required'),
   });
 
+
   // Handle form submission
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const res = await newRequest.post("/auth/login", {
+      const res = await newRequest.post('/auth/login', {
         email: values.email,
         password: values.password,
       });
       console.log(res.data);
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("currentUser", JSON.stringify(res.data.info));
-      navigate("/");
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('currentUser', JSON.stringify(res.data.info));
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+      toast.success(currentUser.username + " Login Successfully", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      navigate('/');
     } catch (err) {
       setErrors({ error: err.response.data });
+      toast.error(err.response.data, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     } finally {
       setSubmitting(false);
     }
@@ -61,7 +71,11 @@ const Login = () => {
             />
             <ErrorMessage name='password' component='div' className='error' />
 
-            <button type='submit' className='loginButton' disabled={isSubmitting}>
+            <button
+              type='submit'
+              className='loginButton'
+              disabled={isSubmitting}
+            >
               {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
           </Form>

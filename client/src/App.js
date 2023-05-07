@@ -17,12 +17,14 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 
 const App = () => (
   <div>
     <ShopContextProvider>
       <Router>
+      <ToastContainer></ToastContainer>
         <Navbar />
         <Routes>
           <Route
