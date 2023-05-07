@@ -57,6 +57,7 @@
   background: var(--color-grey);
   margin-right: 50px;
   margin-left: 80px;
+  margin-right: 40px;
 }
 
 .app__navbar-smallscreen {
@@ -82,12 +83,18 @@
   object-fit: cover;
   cursor: pointer;
   margin-left: 15px;
+
+
+  flex-direction: column;
+  z-index: 5;
+
 }
 
 .app__navbar-smallscreen_overlay .overlay__close {
   font-size: 27px;
   color: var(--color-golden);
   cursor: pointer;
+
   position: absolute;
   top: 20px;
   right: 20px;
@@ -120,6 +127,12 @@
 .username {
   font-size: 18px;
   color: #fff;
+
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
 }
 .app__navbar-smallscreen_links {
   list-style: none;
@@ -136,6 +149,20 @@
 
 .app__navbar-smallscreen_links li:hover {
   color: var(--color-white);
+
+}
+
+.dropdown-menu {
+    width: 300px;
+    position: absolute;
+    top: 80px;
+    list-style: none;
+   
+}
+
+.dropdown-menu li:hover {
+    border-bottom: 1px solid var(--color-golden);
+
 }
 
 @media screen and (min-width: 2000px) {

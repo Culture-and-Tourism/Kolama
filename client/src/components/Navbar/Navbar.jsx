@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import { ShoppingCart } from 'phosphor-react';
 import { GiDualityMask } from 'react-icons/gi';
+import { AiOutlineDown } from "react-icons/ai";
 import images from '../../constants/images';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import Art from '../../container/Arts Management/User/Art/Art';
+import Masks from '../../container/Arts Management/User/Masks/Masks';
+import Dropdown from '../Dropdown/Dropdown';
+import EventHome from '../../container/EventManagement/Admin/EventHome';
 
 const Navbar = () => {
+
   const [open, setOpen] = useState(false);
 
   //   const currentUser = {
@@ -147,6 +152,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
+
 };
 
 export default Navbar;

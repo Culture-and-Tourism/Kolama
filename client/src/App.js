@@ -19,7 +19,13 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+
 import Add from './container/OrderManagement/Supplier/Add/Add';
+
+
+import Art from './container/Arts Management/User/Art/Art';
+import Masks from './container/Arts Management/User/Masks/Masks';
+import EventHome from './container/EventManagement/Admin/EventHome';
 
 import './App.css';
 
@@ -91,6 +97,14 @@ const App = () => (
             element={
               <>
                 <Add />
+              </>
+            }
+          />
+          <Route
+            path='/event'
+            element={
+              <>
+                <EventHome />
               </>
             }
           />
