@@ -17,6 +17,7 @@ import gallery04 from '../assets/gallery04.jpg';
 import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
+import masks_banner from '../assets/masks_banner.jpg';
 
 export default {
     bg,
@@ -37,4 +38,5 @@ export default {
     gallery05,
     gallery06,
     findus,
+    masks_banner,
 };

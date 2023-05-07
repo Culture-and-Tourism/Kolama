@@ -6,8 +6,6 @@ import { AiOutlineDown } from "react-icons/ai";
 import images from '../../constants/images';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Art from '../../container/Arts Management/User/Art/Art';
-import Masks from '../../container/Arts Management/User/Masks/Masks';
 import Dropdown from '../Dropdown/Dropdown';
 
 const Navbar = () => {
