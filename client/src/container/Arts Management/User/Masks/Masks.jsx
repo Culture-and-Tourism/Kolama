@@ -12,7 +12,7 @@ const Masks = () => (
         <HeroBanner />
 
         <div className='main_title'>
-            <h2 className="app__header-h1">Sri Lankan Kolam Masks</h2>
+            <h2 className="app__header-h1">Sri Lankan Kolam Masks ෴</h2>
             <p className="p__opensans" style={{ margin: '2rem 15rem' }}>Sri Lankan Kolam masks are a traditional form of mask-making that originated in the southern coastal regions of Sri Lanka. These masks are crafted from light-weight, eco-friendly materials such as balsa wood, and are used for a variety of purposes, including theatrical performances, rituals, and cultural festivals...</p>
         </div>
 

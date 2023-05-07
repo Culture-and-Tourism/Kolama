@@ -2,6 +2,8 @@
     position: absolute;
     top: 70px;
     text-align: start;
+    text-decoration: none;
+    list-style: none;
 }
 
 .dropdown-menu li {
@@ -24,4 +26,6 @@
     text-transform: capitalize;
     line-height: 28px;
     font-size: 16px;
+    text-decoration: none;
+    list-style: none;
 }
