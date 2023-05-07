@@ -19,23 +19,15 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
-
-
-
 import Add from './container/OrderManagement/Supplier/Add/Add';
-
-
-import Art from './container/Arts Management/User/Art/Art';
+import AddKolam from './container/Arts Management/Admin/Kolam/AddKolam.jsx';
 import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
-
 import './App.css';
-import Masks from './container/Arts Management/User/Masks/Masks';
-import Art from './container/Arts Management/User/Art/Art.jsx';
+import Kolam from './container/Arts Management/User/Kolam/Kolam';
 
 const queryClient = new QueryClient();
 
-const queryClient = new QueryClient();
 
 const App = () => (
   <ShopContextProvider>
@@ -99,12 +91,6 @@ const App = () => (
             }
           />
           <Route
-
-            path='/art'
-            element={
-              <>
-                <Art />
-
             path='/add'
             element={
               <>
@@ -114,13 +100,32 @@ const App = () => (
             }
           />
           <Route
-
+            path='/addkolam'
+            element={
+              <>
+                <AddKolam />
+              </>
+            }
+          />
+          <Route
             path='/kolam'
             element={
               <>
                 <Masks />
                 <Footer />
-
+              </>
+            }
+          />
+          <Route
+            path='/mask'
+            element={
+              <>
+                <Kolam />
+                <Footer />
+              </>
+            }
+          />
+            <Route
             path='/event'
             element={
               <>

@@ -32,6 +32,24 @@ const Navbar = () => {
   console.log(currentUser);
 
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if(window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
@@ -41,8 +59,9 @@ const Navbar = () => {
         <li className='p__opensans'>
           <a href='/'>Home</a>
         </li>
-        <li className='p__opensans'>
-          <a href='#arts'>Arts</a>
+        <li className='p__opensans' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <a href='/arts'>Arts</a>
+          {dropdown && <Dropdown />}
         </li>
         <li className='p__opensans'>
           <a href='#discover'>Discover</a>

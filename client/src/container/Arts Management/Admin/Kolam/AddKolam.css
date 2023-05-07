@@ -1,35 +1,19 @@
-.add {
-  display: flex;
-  justify-content: center;
-  color: aliceblue;
-  background: linear-gradient(rgb(27, 20, 20), rgba(54, 41, 43, 0.5)),
-    url('../../../../assets/reg-pic.jpg');
-  background-size: cover;
-  /* background-color: rgba(225, 233, 207, 0.2); */
-}
 
 .add .container {
   margin-top: 10vh;
   width: 100%; /* Modify width to 100% for responsiveness */
   max-width: 1400px; /* Add max-width to limit container width */
+}
+.container .titlep {
+  font-family: var(--font-base);
+  color: var(--color-golden);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  line-height: 117px;
+  font-size: 90px;
+}
 
-}
-.titlep{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.add .container h1 {
-    width: max-content;
-    margin-bottom: 30px;
-    color: rgb(247, 232, 232);
-    font-weight: 300;
-    font-size: 80px;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important; /* Center the text horizontally */
-  }
-  
 .add .container .sections {
   display: flex;
   flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
@@ -83,42 +67,24 @@
   display: none; /* Hide the default file input */
 }
 
-.custom-file-upload {
-  /* Style your custom button as desired */
-  /* Example styles */
-  margin-top: 20px;
-  border-radius: 10px;
-  border: none;
-  padding: 20px;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  background-color: rgb(135, 136, 54);
-  cursor: pointer;
-}
 #file-upload {
-    display: none;
-  }
-  
-  .custom-file-upload {
-    /* Customize the button as desired */
-    /* Example styles */
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgb(135, 136, 54);
-    color: #fff;
-    cursor: pointer;
-  }
+  display: none;
+}
 
-.add .container .sections .details button {
-  border-radius: 10px;
+.custom-file-upload {
+  background-color: var(--color-crimson);
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 20px;
+  border-radius: 1px;
   border: none;
-  padding: 20px;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  background-color: var(--color-golden);
+  outline: none;
   cursor: pointer;
+  margin-left: -135px;
+  margin-top: 40px;
 }
 
 .add .container .sections .details .add {
@@ -136,25 +102,18 @@
   gap: 20px;
 }
 .create {
-  border-radius: 10px;
+  background-color: var(--color-crimson);
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 20px;
+  border-radius: 1px;
   border: none;
-  padding: 20px;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  background-color: var(--color-golden);
+  outline: none;
   cursor: pointer;
-}
-.add .container .sections .details .addedFeatures button {
-  height: 30px;
-  font-size: 12px;
-  font-weight: 400;
-  background: transparent;
-  color: red;
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Reduce the gap between icon and text for smaller screens */
+  margin-bottom: 80px;
 }
 
 /* Media Query for Mobile Screens */
