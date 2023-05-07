@@ -1,10 +1,11 @@
 import React from 'react';
 import HeroBanner from '../../../../components/HeroBanner/HeroBanner.jsx';
-import './Masks.css';
+import { MASKS } from '../../../../mask';
 import Product from '../../../../components/Product/Product.jsx';
-import { client } from '../../../../lib/client.js';
+import './Masks.css';
+// import Product from '../../../../components/Product/Product.jsx';
 
-const Masks = ({ products }) => (
+const Masks = () => (
 
     <div className="app__header">
 
@@ -16,7 +17,7 @@ const Masks = ({ products }) => (
         </div>
 
         <div className="product_container">
-            {products?.map((product) => <Product key={product._id} product={product} />)}
+            {MASKS?.map((product) => <Product data={product} />)}
         </div>
 
         FooterBanner
@@ -24,14 +25,5 @@ const Masks = ({ products }) => (
     </div>
 
 );
-
-export const getServerSideProps = async () => {
-    const query = '*[_type == "product"]';
-    const products = await client.fetch(query);
-
-    return {
-        props: { products }
-    }
-}
 
 export default Masks;
