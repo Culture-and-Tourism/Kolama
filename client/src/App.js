@@ -19,7 +19,7 @@ import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
 import Art from './container/Arts Management/User/Art/Art';
 import Masks from './container/Arts Management/User/Masks/Masks';
-
+import Dashboard from './container/Arts Management/Admin/Dashboard/Dashboard';
 
 const App = () => (
   <div>
@@ -41,15 +41,16 @@ const App = () => (
                 <Intro />
                 <Gallery />
                 <FindUs />
+                <Footer /> 
               </>
             }
           />
-          <Route path='/art' element={<Art />} />
-          <Route path='/mask' element={<Masks />} />
+          <Route path='/art' element={<> <Art /> <Footer /></> } />
+          <Route path='/mask' element={<> <Masks /> <Footer /> </>} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/dash' element={<Dashboard />} />
         </Routes>
-          <Footer />
       </Router>
     </ShopContextProvider>
   </div>
