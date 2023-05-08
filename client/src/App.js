@@ -25,6 +25,9 @@ import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
 import './App.css';
 import Kolam from './container/Arts Management/User/Kolam/Kolam';
+import AddMask from './container/Arts Management/Admin/Masks/AddMask';
+import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
+import Puppets from './container/Arts Management/User/Puppets/Puppets';
 
 const queryClient = new QueryClient();
 
@@ -108,6 +111,14 @@ const App = () => (
             }
           />
           <Route
+            path='/addmask'
+            element={
+              <>
+                <AddMask />
+              </>
+            }
+          />
+          <Route
             path='/kolam'
             element={
               <>
@@ -125,11 +136,29 @@ const App = () => (
               </>
             }
           />
+          <Route
+            path='/puppet'
+            element={
+              <>
+                <Puppets />
+                <Footer />
+              </>
+            }
+          />
             <Route
             path='/event'
             element={
               <>
                 <EventHome />
+
+              </>
+            }
+          />
+          <Route
+            path='/viewkolam'
+            element={
+              <>
+                <ViewKolam />
 
               </>
             }
