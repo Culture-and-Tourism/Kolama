@@ -2,7 +2,9 @@ import React from 'react';
 
 const Art = () => {
     return (
-        <div>Art</div>
+        <div>
+            <h1>Art Page</h1>
+        </div>
     );
 };
 

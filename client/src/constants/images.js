@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import bg from '../assets/bg.jpg';
-import mask from '../assets/mask.jpg';
+import mask from '../assets/mask.png';
 import mainmask from '../assets/mainmask.png';
 import welcomeArts from '../assets/welcomeArts.jpg';
 import welcomePlaces from '../assets/welcomePlaces.jpg';
@@ -18,6 +18,7 @@ import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
 import masks_banner from '../assets/masks_banner.jpg';
+import mask1 from '../assets/masks/m1.jpg';
 
 export default {
     bg,
@@ -39,4 +40,5 @@ export default {
     gallery06,
     findus,
     masks_banner,
+    mask1,
 };
