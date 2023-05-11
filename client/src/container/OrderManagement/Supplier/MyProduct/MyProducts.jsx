@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import getCurrentUser from '../../../../utils/getCurrentUser';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import newRequest from '../../../../utils/newRequest';
-import { images } from '../../../../constants';
+// import { images } from '../../../../constants';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
-import { ShoppingCart } from 'phosphor-react';
+// import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import { GiShoppingBag } from 'react-icons/gi';
 import { GiDualityMask } from 'react-icons/gi';
 import images from '../../constants/images';
+// import Product from '../../container/OrderManagement/User/shop/product';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  // const { productsInCart } = useCart();
+  // const [cartsVisibilty, setCartVisible] = useState(false);
+
 
   //   const currentUser = {
   //     id: 1,
@@ -76,10 +80,13 @@ const Navbar = () => {
               <div className='options'>
                 {currentUser?.isSeller && (
                   <>
-                    <Link className='link' to='/'>
+                    <Link className='link' to='/myproduct'>
                       MyProducts
                     </Link>
                     <Link className='link' to='/'>
+                      AdminDashboard
+                    </Link>
+                    <Link className='link' to='/supplier/add'>
                       Add New Product
                     </Link>
                   </>
@@ -97,8 +104,19 @@ const Navbar = () => {
         )}
 
         <div className='p__opensans'>
+   
+        {/* <button
+          className='btn shopping-cart-btn'
+          onClick={() => setCartVisible(true)}
+         >
+          <GiShoppingBag size={24} />
+          {productsInCart.length > 0 && (
+            <span className='product-count'>{productsInCart.length}</span>
+          )}
+        </button> */}
+
           <Link to='/cart'>
-            <ShoppingCart size={32} />
+            <GiShoppingBag size={32} />
           </Link>
         </div>
       </div>

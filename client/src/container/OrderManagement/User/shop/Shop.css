@@ -1,10 +1,12 @@
 .shopTitle {
-  margin-top: 50px;
+  padding: 50px;
   text-align: center;
   font-size: 30px;
   color: var(--color-golden);
 }
-
+.shop{
+  background-color: var(--color-black);
+}
 .products {
   width: 100%;
   height: auto;
@@ -12,7 +14,6 @@
   grid-template-columns: 1fr;
   gap: 20px;
   place-items: center;
- 
 }
 
 .product {
@@ -46,13 +47,13 @@
   text-align: center;
 }
 
-.addToCartBttn {
-  background-color: transparent;
-  border: 2px solid rgb(148, 42, 42);
+.btn {
+  /* background-color: transparent; */
+  border: 2px solid rgb(24, 23, 23);
   min-width: 100px;
   padding: 5px 10px;
   border-radius: 15px;
-  color: var(--color-golden);
+  /* color: var(--color-golden); */
 }
 
 .addToCartBttn:hover {

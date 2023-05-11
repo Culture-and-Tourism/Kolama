@@ -22,7 +22,7 @@ const Footer = () => (
             <div className="app__footer-links_logo">
                 <img src={images.mask} alt="footer_logo" />
                 <p className="p__opensans">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
-                <img src={images.mainmask} className="spoon__img" style={{ marginTop: 15 }} />
+                <img src={images.mainmask} alt='' className="spoon__img" style={{ marginTop: 15 }} />
                 <div className="app__footer-links_icons">
                     <FiFacebook />
                     <FiTwitter />

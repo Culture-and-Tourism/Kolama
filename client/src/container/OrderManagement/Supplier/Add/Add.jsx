@@ -5,6 +5,8 @@ import upload from '../../../../utils/upload';
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import newRequest from '../../../../utils/newRequest';
+import {  toast } from 'react-toastify';
+
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -30,6 +32,9 @@ const Add = () => {
 
   const handleUpload = async () => {
     setUploading(true);
+    toast.success(" Uploaded Successfully", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
     try {
       const cover = await upload(singleFile);
 
