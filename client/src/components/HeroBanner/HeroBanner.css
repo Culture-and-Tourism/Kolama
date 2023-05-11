@@ -14,7 +14,10 @@
 }
 
 .hero-banner-container h3 {
-  color: white;
+  background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 5em;
   margin-left: 10px;
   text-transform: uppercase;

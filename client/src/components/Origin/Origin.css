@@ -121,14 +121,6 @@
   margin-top: 0.5rem;
 }
 
-.hero-banner-image {
-  position: absolute;
-  top: 0%;
-  right: 5%;
-  width: 220px;
-  height: 220px;
-}
-
 .text {
   margin-top: -40px;
   font-family: var(--font-alt);

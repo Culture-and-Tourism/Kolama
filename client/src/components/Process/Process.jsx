@@ -15,8 +15,8 @@ const Process = () => {
                     1. Masks which represent human beings: King, Queen, Hewa, Jasa, Lenchina, Suransina, Arachchi, Mudali, Chencha, Liyanappu <br />
                     2. Over-realistic masks: Narilatha, sandakinduru, gurulu, surabawalliya, giridevi, Raksha <br />
                     3. Animal masks : Lion, tiger, fox, dog, eagle <br /> <br />
-                The making of masks is a complex process. The process is included in three texts written in Sanskrit; Shariputraya, Rupawaliya, Maimathaya.The making of a kolammask has the following steps; <br />
-                    1. Cutting the tree and processing the timber, <br /> <br />
+                The making of masks is a complex process. The process is included in three texts written in Sanskrit; Shariputraya, Rupawaliya, Maimathaya.The making of a kolammask has the following steps; <br /> <br />
+                    1. Cutting the tree and processing the timber, <br />
                     2. Flattening, <br />
                     3. Removing unnecessary sections, <br />
                     4. Smoking, <br />

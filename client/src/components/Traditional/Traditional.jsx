@@ -10,7 +10,7 @@ const Traditional = () => {
         <div className="gpt3__whatgpt3 section__margin" id="wgpt3">
             <div className="gpt3__whatgpt3-heading">
                 <h1 className="gradient__text">Four Main Traditions</h1>
-                <img src={images.art} alt="mask_image" className="hero-banner-image" />
+                <img src={images.art} alt="mask_image" className="banner-image" />
             </div>
             <div className="gpt3__whatgpt3-container">
                 <Feature title="Kolam Dance Drama" text="According to written records, the kolamdrama is two centuries old, but still occasionally prevalent in some villages in Sri Lanka. It is challenging to trace the roots of a folk drama which is very old; however, with reference to written records, and kolamdramas performed today, this intends to provide a comprehensive account of the kolamdance drama in Sri Lanka." />
