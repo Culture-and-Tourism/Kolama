@@ -18,7 +18,10 @@ import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
 import masks_banner from '../assets/masks_banner.jpg';
-import mask1 from '../assets/masks/m1.jpg';
+import art from '../assets/art.png';
+import features from '../assets/features.png';
+import dancers from '../assets/dancers.png';
+import devil_dancer from '../assets/devil_dancer.webp';
 
 export default {
     bg,
@@ -40,5 +43,8 @@ export default {
     gallery06,
     findus,
     masks_banner,
-    mask1,
+    art,
+    features,
+    dancers,
+    devil_dancer,
 };
