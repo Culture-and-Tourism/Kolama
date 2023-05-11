@@ -30,6 +30,7 @@ import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
 import Puppets from './container/Arts Management/User/Puppets/Puppets';
 import MasksDetails from './container/Arts Management/User/Masks/MasksDetails';
 import Art from './container/Arts Management/User/Art/Art';
+import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
 
 const queryClient = new QueryClient();
 
@@ -180,6 +181,14 @@ const App = () => (
               <>
                 <MasksDetails/>
                 <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/adminhome'
+            element={
+              <>
+                <AdminHome />
               </>
             }
           />

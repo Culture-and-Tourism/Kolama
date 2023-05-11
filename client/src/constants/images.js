@@ -22,6 +22,10 @@ import art from '../assets/art.png';
 import features from '../assets/features.png';
 import dancers from '../assets/dancers.png';
 import devil_dancer from '../assets/devil_dancer.webp';
+import admin_art from '../assets/admin_art.jpg';
+import admin_pro from '../assets/admin_pro.jpg';
+import admin_event from '../assets/admin_event.jpg';
+import admin_order from '../assets/admin_order.jpg';
 
 export default {
     bg,
@@ -47,4 +51,8 @@ export default {
     features,
     dancers,
     devil_dancer,
+    admin_art,
+    admin_pro,
+    admin_event,
+    admin_order,
 };
