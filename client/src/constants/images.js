@@ -26,6 +26,7 @@ import admin_art from '../assets/admin_art.jpg';
 import admin_pro from '../assets/admin_pro.jpg';
 import admin_event from '../assets/admin_event.jpg';
 import admin_order from '../assets/admin_order.jpg';
+import pupp from '../assets/pupp.jpg';
 
 export default {
     bg,
@@ -55,4 +56,5 @@ export default {
     admin_pro,
     admin_event,
     admin_order,
+    pupp,
 };

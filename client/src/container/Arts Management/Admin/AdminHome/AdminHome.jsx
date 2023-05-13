@@ -12,7 +12,7 @@ const AdminHome = () => {
                 <div className='content'>
                     <img src={images.admin_art} alt="header_img" />
                     <h2>Art Management System</h2>
-                    <a href="#view">View Kolam Details</a>
+                    <a href="viewkolam">View Kolam Details</a>
                     <a href="#view">View Masks Details</a>
                     <a href="#view">View Puppets Details</a>
                 </div>

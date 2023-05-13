@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import HeroBanner from '../../../../components/HeroBanner/HeroBanner.jsx';
 import { PUPPET } from '../../../../puppet';
 import PP from '../../../../components/PP/PP.jsx';
 import './Puppets.css';
-// import Product from '../../../../components/Product/Product.jsx';
+import PuppetBanner from '../../../../components/PuppetBanner/PuppetBanner.jsx';
 
 const Puppets = () => {
 
@@ -13,7 +12,7 @@ const Puppets = () => {
 
         <div className="app__header">
 
-            <HeroBanner />
+            <PuppetBanner />
 
             <div className='main_title'>
                 <h2 className="app__header-h1">Sri Lankan Puppets ෴</h2>

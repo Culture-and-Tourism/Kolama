@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import HeroBanner from '../../../../components/HeroBanner/HeroBanner.jsx';
-import { MASKS } from '../../../../mask';
 import Product from '../../../../components/Product/Product.jsx';
 import './Masks.css';
-// import Product from '../../../../components/Product/Product.jsx';
+import newRequest from '../../../../utils/newRequest.js';
+import { useQuery } from '@tanstack/react-query';
+import getCurrentUser from '../../../../utils/getCurrentUser.js';
 
 const Masks = () => {
 
     const [query, setQuery] = useState("");
+    const currentUser = getCurrentUser();
 
+    const { data } = useQuery({
+        queryKey: ['myProducts'],
+        queryFn: () =>
+            newRequest.get(`/addskolam?userId=${currentUser._id}`).then((res) => {
+                return res.data;
+            }),
+    });
+  
     return (
         <div className="app__header">
 
@@ -22,8 +32,8 @@ const Masks = () => {
             <input type="text" placeholder='Search...' className='search' onChange={(e) => setQuery(e.target.value)} />
 
             <div className="product_container">
-                {MASKS?.filter((product) => product.maskName.toLowerCase().includes(query)
-                ).map((product) => <Product key={product.id} data={product} />)}
+                {data?.filter((data) => data.title.toLowerCase().includes(query)
+                ).map((data) => <Product key={data.id} data={data} />)}
             </div>
 
         </div>

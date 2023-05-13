@@ -17,14 +17,14 @@ function ViewKolam() {
     const { isLoading, error, data } = useQuery({
         queryKey: ['myProducts'],
         queryFn: () =>
-            newRequest.get(`/kolams?userId=${currentUser._id}`).then((res) => {
+            newRequest.get(`/addskolam?userId=${currentUser._id}`).then((res) => {
                 return res.data;
             }),
     });
 
     const mutation = useMutation({
         mutationFn: (id) => {
-            return newRequest.delete(`/kolams/${id}`);
+            return newRequest.delete(`/addskolam/${id}`);
         },
         onSuccess: () => {
             queryClient.invalidateQueries(['myProducts']);
@@ -64,17 +64,17 @@ function ViewKolam() {
                             <th>Action</th>
                         </tr>
 
-                        {data.map((add) => (
-                            <tr key={add._id}>
+                        {data.map((kolam) => (
+                            <tr key={kolam._id}>
                                 <td>
-                                    <img className='img' src={add.cover} alt='item img' />
+                                    <img className='img' src={kolam.cover} alt='item img' />
                                 </td>
-                                <td>{add.title}</td>
-                                <td>{add.desc}</td>
+                                <td>{kolam.title}</td>
+                                <td>{kolam.desc}</td>
                                 <td>
                                     <div className="actionBtn">
-                                        <IconButton onClick={() => handleDelete(add._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
-                                        <IconButton onClick={() => handlUpdate(add._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
+                                        <IconButton onClick={() => handleDelete(kolam._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
+                                        <IconButton onClick={() => handlUpdate(kolam._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
 
                                     </div>
                                 </td>
