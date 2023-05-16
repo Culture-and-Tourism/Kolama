@@ -5,6 +5,8 @@ import upload from '../../../../utils/upload';
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import newRequest from '../../../../utils/newRequest';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddMask = () => {
     const [singleFile, setSingleFile] = useState(undefined);
@@ -47,11 +49,12 @@ const AddMask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         mutation.mutate(state);
-        navigate('/');
+        toast('Details inserted successfully');
+        navigate('/viewmask');
     };
     console.log(state);
     return (
-        <div className='add'>
+        <><div className='add'>
             <div className='container'>
                 <div className='titlep'>
                     <h1 style={{ color: '#DCCA87' }}>Add New Sanni Masks</h1>
@@ -64,8 +67,7 @@ const AddMask = () => {
                             type='text'
                             name='title'
                             placeholder='e.g.Butha Sanniya'
-                            onChange={handleChange}
-                        />
+                            onChange={handleChange} />
 
                         <label htmlFor=''>Description</label>
                         <textarea
@@ -86,8 +88,7 @@ const AddMask = () => {
                                 <input
                                     id='file'
                                     type='file'
-                                    onChange={(e) => setSingleFile(e.target.files[0])}
-                                />
+                                    onChange={(e) => setSingleFile(e.target.files[0])} />
                             </div>
                             <button className='create' onClick={handleUpload}>
                                 {uploading ? 'uploading' : 'Upload'}
@@ -100,7 +101,7 @@ const AddMask = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div><ToastContainer /></>
     );
 };
 
