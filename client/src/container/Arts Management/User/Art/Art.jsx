@@ -9,15 +9,17 @@ import Blog from '../../../../components/Blog/Blog';
 
 const Art = () => {
     return (
-        <div>
-            <Traditional />
-            <Intro />
-            <FeaturesMask />
-            <Origin />
-            <Music />
-            <Process />
-            <Blog />
-        </div>
+        <div className='app__header'>
+            <div>
+                <Traditional />
+                <Intro />
+                <FeaturesMask />
+                <Origin />
+                <Music />
+                <Process />
+                <Blog />
+            </div>
+        </div>  
     );
 };
 

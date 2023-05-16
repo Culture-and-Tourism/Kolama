@@ -27,6 +27,11 @@ import admin_pro from '../assets/admin_pro.jpg';
 import admin_event from '../assets/admin_event.jpg';
 import admin_order from '../assets/admin_order.jpg';
 import pupp from '../assets/pupp.jpg';
+import admin from '../assets/admin.jpeg';
+import d1 from '../assets/d1.png';
+import d2 from '../assets/d2.png';
+import d3 from '../assets/d3.png';
+import d4 from '../assets/d4.png';
 
 export default {
     bg,
@@ -57,4 +62,9 @@ export default {
     admin_event,
     admin_order,
     pupp,
+    admin,
+    d1,
+    d2,
+    d3,
+    d4,
 };

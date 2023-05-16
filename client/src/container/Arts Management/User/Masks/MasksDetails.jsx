@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import images from '../../../../constants/images';
 import './MasksDetails.css';
 import newRequest from '../../../../utils/newRequest.js';
 
@@ -26,10 +26,29 @@ const MasksDetails = () => {
 
 
     return (
-        <div>
+        <div className='app__header'>
             {kolam ? (
-                // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                <><img src={kolam.cover} alt='detail-image'/><><h2>{kolam.title}</h2><p className='p__opensans'>{kolam.desc}</p></></>
+                <><><div className='app__header'>
+                    <div className='image-container'>
+                        <img src={kolam.cover} className='product-detail-image' alt='product' />
+                    </div>
+                </div><div className='product-detail-desc'>
+                        <h1>{kolam.title}</h1>
+                        <img src={images.mainmask} alt="mask_image" className="spoon__img" style={{margin: '0 50rem'}}/>
+                        <p className='p__opensans'>{kolam.desc}</p>
+                        <div className='logo'>
+                            <img src={images.mask} alt='app__logo' />
+                        </div>
+                    </div></><div className="maylike-products-wrapper">
+                        <div>
+                            <div className="maylike-products-container">
+                                <img src={images.d1} className='product-detail-image' alt='product' />
+                                <img src={images.d2} className='product-detail-image' alt='product' />
+                                <img src={images.d3} className='product-detail-image' alt='product' />
+                                <img src={images.d4} className='product-detail-image' alt='product' />
+                            </div>
+                        </div>
+                    </div></>
             ) : (
                 <h2>Item not found</h2>
             )}

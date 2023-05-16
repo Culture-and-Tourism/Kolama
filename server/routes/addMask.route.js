@@ -1,25 +1,25 @@
 import express from 'express';
 import {
-    createAddKolam,
-    deleteAddKolam,
-    getAddKolam,
-    getAddsKolam,
+    createAddMask,
+    deleteAddMask,
+    getAddMask,
+    getAddsMask,
     // updateAddsKolam,
-} from '../controllers/addKolam.controller.js';
+} from '../controllers/addMask.controller.js';
 import { verifyToken } from '../middleware/jwt.js';
 const router = express.Router();
 
 //create new add route
-router.post('/', verifyToken, createAddKolam);
+router.post('/', verifyToken, createAddMask);
 
 //creat delete add route
-router.delete('/:id', verifyToken, deleteAddKolam);
+router.delete('/:id', verifyToken, deleteAddMask);
 
 //create retrive add route
-router.get('/single/:id', getAddKolam);
+router.get('/single/:id', getAddMask);
 
 //createget all ads route
-router.get('/', getAddsKolam);
+router.get('/', getAddsMask);
 
 // //createget all ads route
 // router.put('/:id', verifyToken, updateAddsKolam);

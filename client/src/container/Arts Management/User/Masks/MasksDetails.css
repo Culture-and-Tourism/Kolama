@@ -1,35 +1,15 @@
-.product-detail-container {
-  display: flex;
-  gap: 40px;
-  margin: 40px;
-  margin-top: 60px;
-  color: #324d67;
-}
-
 .product-detail-image {
   border-radius: 15px;
-  background-color: #ebebeb;
-
-  width: 400px;
-  height: 400px;
+  width: 520px;
+  height: 520px;
   cursor: pointer;
+  margin-left: 2rem;
   transition: 0.3s ease-in-out;
-}
-.product-detail-image:hover {
-  background-color: #f02d34;
-}
-.small-images-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  margin-left: 10rem;
 }
 
-.small-image {
-  border-radius: 8px;
-  background-color: #ebebeb;
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
+.product-detail-desc {
+  margin-top: -30rem;
 }
 
 .product-detail-desc h1 {
@@ -39,43 +19,37 @@
   letter-spacing: 0.04em;
   text-transform: capitalize;
   font-size: 40px;
+  display: flex;
+  flex: 3;
+  gap: 40px;
+  margin-left: 50rem;
 }
 .product-detail-desc p {
-  margin-top: 10px;
+  margin: 2rem 10rem 0 50rem;
 }
 
 .maylike-products-wrapper{
-  margin-top: 120px;
+  margin-top: 10rem;
 }
-.maylike-products-wrapper h2{
-  text-align: center;
-  margin: 50px;
-  color: #324d67;
 
-  font-size: 28px;
-}
 .maylike-products-container{
   display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
+  overflow: hidden;
 }
 
-.marquee {
-  position: relative;
+.maylike-products-container img {
+  width: 400px;
   height: 400px;
-  width: 100%;
-  overflow-x: hidden;
 }
 
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 15s linear infinite;
-  width: 180%;
+.logo {
+  margin: 10rem 30rem;
 }
 
-.track:hover {
-  animation-play-state: paused;
+.logo img {
+  width: 400px;
+  height: 150px;
 }

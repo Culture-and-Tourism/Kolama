@@ -5,7 +5,7 @@ import './AdminHome.css';
 
 const AdminHome = () => {
     return (
-        <div className='container'>
+        <div className='admin'>
             <h1 className="header-h1">Admin Dashboard ෴</h1>
             <div className='box' style={{ "--i": 0 }}>
                 <i></i>

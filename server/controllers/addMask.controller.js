@@ -1,51 +1,49 @@
-import AddKolam from '../models/addKolam.model.js';
+import AddMask from '../models/addMask.model.js';
 import createError from '../utils/createError.js';
 
 //create a new add for sellers
-export const createAddKolam = async (req, res, next) => {
+export const createAddMask = async (req, res, next) => {
     if (!req.isSeller)
-        return next(createError(403, 'Only sellers can create a Adds!'));
+        return next(createError(403, 'Only admin can create a Details!'));
 
-    const newAddKolam = new AddKolam({
+    const newAddMask = new AddMask({
         userId: req.userId,
         ...req.body,
     });
     try {
-        const savedAddKolam = await newAddKolam.save();
-        res.status(201).json(savedAddKolam);
+        const savedAddMask = await newAddMask.save();
+        res.status(201).json(savedAddMask);
     } catch (err) {
         next(err);
     }
 };
 
 //create delete function for sellers' adds
-export const deleteAddKolam = async (req, res, next) => {
+export const deleteAddMask = async (req, res, next) => {
     try {
-        const newAddKolam = await AddKolam.findById(req.params.id);
+        const newAddMask = await AddMask.findById(req.params.id);
 
-        if (newAddKolam.userId !== req.userId)
-            return next(createError(403, 'You can Delete your Adds only!'));
-        await AddKolam.findByIdAndDelete(req.params.id);
-        res.request.status(200).send('Add has been deleted!');
+        if (newAddMask.userId !== req.userId)
+            return next(createError(403, 'You can Delete your Details only!'));
+        await AddMask.findByIdAndDelete(req.params.id);
+        res.request.status(200).send('Masks details has been deleted!');
     } catch (err) {
         next(err);
     }
 };
 
 //get seleted add from Add model
-export const getAddKolam = async (req, res, next) => {
+export const getAddMask = async (req, res, next) => {
     try {
-        const newAddKolam = await AddKolam.findById(req.params.id);
-        if (!newAddKolam) return next(createError(404, 'Add Not Found!'));
-        res.status(200).send(newAddKolam);
+        const newAddMask = await AddMask.findById(req.params.id);
+        if (!newAddMask) return next(createError(404, 'Details Not Found!'));
+        res.status(200).send(newAddMask);
     } catch (err) {
         next(err);
     }
 };
 
-
-//get ads acoording to filtering
-export const getAddsKolam = async (req, res, next) => {
+export const getAddsMask = async (req, res, next) => {
     const q = req.query;
     const filters = {
         ...(q.userId && { userId: q.userId }),
@@ -59,13 +57,12 @@ export const getAddsKolam = async (req, res, next) => {
         ...(q.search && { title: { $regex: q.search, $options: 'i' } }),
     };
     try {
-        const newAddKolam = await AddKolam.find(filters).sort({ [q.sort]: -1 });
-        res.status(200).send(newAddKolam);
+        const newAddMask = await AddMask.find(filters).sort({ [q.sort]: -1 });
+        res.status(200).send(newAddMask);
     } catch (err) {
         next(err);
     }
 };
-
 
 // //create update selected product
 // export const updateAdds = async (req, res) => {
