@@ -2,22 +2,22 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import images from '../../../../constants/images';
-import './MasksDetails.css';
+import './KolamDetails.css';
 import newRequest from '../../../../utils/newRequest.js';
 
-const MasksDetails = () => {
+const KolamDetails = () => {
 
     const { id } = useParams();
-    const [kolam, setKolam] = useState(null);
+    const [mask, setMask] = useState(null);
 
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await newRequest.get(`/addskolam/single/${id}`); // Assuming the API endpoint is '/api/items/:id'
-                setKolam(response.data);
+                const response = await newRequest.get(`/addsmask/single/${id}`); // Assuming the API endpoint is '/api/items/:id'
+                setMask(response.data);
             } catch (error) {
                 console.error(error);
-                setKolam(null); // Handle error case when item is not found
+                setMask(null); // Handle error case when item is not found
             }
         };
 
@@ -27,15 +27,15 @@ const MasksDetails = () => {
 
     return (
         <div className='app__header'>
-            {kolam ? (
+            {mask ? (
                 <><div className='app__header'>
                     <div className='image-container'>
-                        <img src={kolam.cover} className='product-detail-image' alt='product' />
+                        <img src={mask.cover} className='product-detail-image' alt='product' />
                     </div>
                 </div><div className='product-detail-desc'>
-                        <h1>{kolam.title}</h1>
+                        <h1>{mask.title}</h1>
                         <img src={images.mainmask} alt="mask_image" className="spoon__img" style={{ margin: '0 50rem' }} />
-                        <p className='p__opensans'>{kolam.desc}</p>
+                        <p className='p__opensans'>{mask.desc}</p>
                         <div className='logo'>
                             <img src={images.mask} alt='app__logo' />
                         </div>
@@ -48,4 +48,4 @@ const MasksDetails = () => {
     );
 };
 
-export default MasksDetails;
+export default KolamDetails;

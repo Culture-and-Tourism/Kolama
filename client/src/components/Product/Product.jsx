@@ -4,7 +4,7 @@ import './Product.css';
 
 const Prodcut = (props) => {
 
-    const { cover, title, desc, _id } = props.data;
+    const { cover, title, _id } = props.data;
 
     return (
         <div>

@@ -31,6 +31,8 @@ import Puppets from './container/Arts Management/User/Puppets/Puppets';
 import MasksDetails from './container/Arts Management/User/Masks/MasksDetails';
 import Art from './container/Arts Management/User/Art/Art';
 import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
+import ViewMask from './container/Arts Management/Admin/Masks/ViewMask';
+import KolamDetails from './container/Arts Management/User/Kolam/KolamDetails';
 
 const queryClient = new QueryClient();
 
@@ -176,10 +178,28 @@ const App = () => (
             }
           />
           <Route
+            path='/viewmask'
+            element={
+              <>
+                <ViewMask />
+
+              </>
+            }
+          />
+          <Route
             path='/products/:id'
             element={
               <>
                 <MasksDetails/>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/masks/:id'
+            element={
+              <>
+                <KolamDetails />
                 <Footer />
               </>
             }

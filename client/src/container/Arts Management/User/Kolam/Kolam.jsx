@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
-import { KOLAM } from '../../../../kolam';
 import Masks from '../../../../components/Masks/Masks.jsx';
 import './Kolam.css';
 import KolamBanner from '../../../../components/KolamBanner/KolamBanner.jsx';
+import newRequest from '../../../../utils/newRequest.js';
+import { useQuery } from '@tanstack/react-query';
+import getCurrentUser from '../../../../utils/getCurrentUser.js';
 
 const Kolam = () => {
 
     const [query, setQuery] = useState("");
+    const currentUser = getCurrentUser();
+
+    const { data } = useQuery({
+        queryKey: ['myProducts'],
+        queryFn: () =>
+            newRequest.get(`/addsmask?userId=${currentUser._id}`).then((res) => {
+                return res.data;
+            }),
+    });
 
     return (
         <div className="app__header">
@@ -22,8 +33,8 @@ const Kolam = () => {
             <input type="text" placeholder='Search...' className='search' onChange={(e) => setQuery(e.target.value)} />
 
             <div className="product_container">
-                {KOLAM?.filter((kolam) => kolam.kolamName.toLowerCase().includes(query)
-                ).map((kolam) => <Masks data={kolam} />)}
+                {data?.filter((data) => data.title.toLowerCase().includes(query)
+                ).map((data) => <Masks key={data.id} data={data} />)}
             </div>
 
         </div>

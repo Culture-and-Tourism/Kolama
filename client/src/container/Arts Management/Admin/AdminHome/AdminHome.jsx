@@ -13,8 +13,8 @@ const AdminHome = () => {
                     <img src={images.admin_art} alt="header_img" />
                     <h2>Art Management System</h2>
                     <a href="viewkolam">View Kolam Details</a>
-                    <a href="#view">View Masks Details</a>
-                    <a href="#view">View Puppets Details</a>
+                    <a href="viewmask">View Masks Details</a>
+                    {/* <a href="#view">View Puppets Details</a> */}
                 </div>
             </div>
             <div className='box' style={{ "--i": 1 }}>
