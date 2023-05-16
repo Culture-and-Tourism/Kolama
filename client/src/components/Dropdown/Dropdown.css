@@ -4,6 +4,7 @@
     text-align: start;
     text-decoration: none;
     list-style: none;
+    z-index: 1000;
 }
 
 .dropdown-menu li {

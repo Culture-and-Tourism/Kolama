@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ShoppingCart } from 'phosphor-react';
 import { GiDualityMask } from 'react-icons/gi';
-import { AiOutlineDown } from "react-icons/ai";
 import images from '../../constants/images';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from '../Dropdown/Dropdown';
-import EventHome from '../../container/EventManagement/Admin/EventHome';
+
 
 const Navbar = () => {
 
@@ -43,12 +42,14 @@ const Navbar = () => {
   };
 
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
+    if(window.innerWidth < 960) {
       setDropdown(false);
     } else {
-      setDropdown(false);
+      setTimeout(() => {
+        setDropdown(false);
+      }, 3000);
     }
-  };
+  }
 
   return (
     <nav className='app__navbar'>

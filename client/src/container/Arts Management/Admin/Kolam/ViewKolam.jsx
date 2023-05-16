@@ -3,37 +3,38 @@ import { Link } from 'react-router-dom';
 import './ViewKolam.css';
 import { useNavigate } from 'react-router-dom';
 import getCurrentUser from '../../../../utils/getCurrentUser';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import newRequest from '../../../../utils/newRequest';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import IconButton from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton'; 
 
 function ViewKolam() {
     const currentUser = getCurrentUser();
 
-    const queryClient = useQueryClient();
-
     const { isLoading, error, data } = useQuery({
         queryKey: ['myProducts'],
         queryFn: () =>
-            newRequest.get(`/kolams?userId=${currentUser._id}`).then((res) => {
+            newRequest.get(`/addskolam?userId=${currentUser._id}`).then((res) => {
                 return res.data;
             }),
     });
 
     const mutation = useMutation({
         mutationFn: (id) => {
-            return newRequest.delete(`/kolams/${id}`);
+            return newRequest.delete(`/addskolam/${id}`);
         },
-        onSuccess: () => {
-            queryClient.invalidateQueries(['myProducts']);
+        onSuccess: () => { 
+            toast.success('Item deleted successfully!');
         },
     });
 
     const handleDelete = (id) => {
-        mutation.mutate(id);
-
+        if(window.confirm('Are you sure you want to delete this item?')) {
+            mutation.mutate(id);
+        }
     };
 
     const navigate = useNavigate();
@@ -43,47 +44,59 @@ function ViewKolam() {
     }
     return (
 
-        <div className='myProducts'>
+        <><div className='myProducts'>
+
             {isLoading ? (
                 'loading'
             ) : error ? (
                 'error'
             ) : (
-                <div className='container'>
-                    <div className='title'>
-                        <h1>My Products</h1>
-                        <Link to="/supplier/add">
-                            <button>Add New Product</button>
-                        </Link>
+
+                <div className='container_table'>
+                    <div className='table'>
+                        <div className='table_header'>
+                            <h1>Sri Lankan Kolam Masks</h1>
+                            <Link to="/addkolam">
+                                <button className="button">Add New Kolam Masks</button>
+                            </Link>
+                        </div>
+                        <div className='table_body'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {data.map((kolam) => (
+                                        <tr key={kolam._id}>
+                                            <td>
+                                                <img className='img' src={kolam.cover} alt='item img' />
+                                            </td>
+                                            <td><strong>{kolam.title}</strong></td>
+                                            <td>{kolam.desc}</td>
+                                            <td>
+                                                <div className="actionBtn">
+                                                    <IconButton onClick={() => handleDelete(kolam._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
+
+                                                    <IconButton onClick={() => handlUpdate(kolam._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <table>
-                        <tr>
-                            <th>Image  Of  Product</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Action</th>
-                        </tr>
-
-                        {data.map((add) => (
-                            <tr key={add._id}>
-                                <td>
-                                    <img className='img' src={add.cover} alt='item img' />
-                                </td>
-                                <td>{add.title}</td>
-                                <td>{add.desc}</td>
-                                <td>
-                                    <div className="actionBtn">
-                                        <IconButton onClick={() => handleDelete(add._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
-                                        <IconButton onClick={() => handlUpdate(add._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
-
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                    </table>
                 </div>
             )}
-        </div>
+
+        </div><ToastContainer /></>
     );
 }
 

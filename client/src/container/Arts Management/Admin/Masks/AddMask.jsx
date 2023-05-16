@@ -47,7 +47,7 @@ const AddMask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         mutation.mutate(state);
-        navigate('/addsmask');
+        navigate('/');
     };
     console.log(state);
     return (

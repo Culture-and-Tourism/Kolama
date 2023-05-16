@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import bg from '../assets/bg.jpg';
-import mask from '../assets/mask.jpg';
+import mask from '../assets/mask.png';
 import mainmask from '../assets/mainmask.png';
 import welcomeArts from '../assets/welcomeArts.jpg';
 import welcomePlaces from '../assets/welcomePlaces.jpg';
@@ -18,6 +18,20 @@ import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
 import masks_banner from '../assets/masks_banner.jpg';
+import art from '../assets/art.png';
+import features from '../assets/features.png';
+import dancers from '../assets/dancers.png';
+import devil_dancer from '../assets/devil_dancer.webp';
+import admin_art from '../assets/admin_art.jpg';
+import admin_pro from '../assets/admin_pro.jpg';
+import admin_event from '../assets/admin_event.jpg';
+import admin_order from '../assets/admin_order.jpg';
+import pupp from '../assets/pupp.jpg';
+import admin from '../assets/admin.jpeg';
+import d1 from '../assets/d1.png';
+import d2 from '../assets/d2.png';
+import d3 from '../assets/d3.png';
+import d4 from '../assets/d4.png';
 
 export default {
     bg,
@@ -39,4 +53,18 @@ export default {
     gallery06,
     findus,
     masks_banner,
+    art,
+    features,
+    dancers,
+    devil_dancer,
+    admin_art,
+    admin_pro,
+    admin_event,
+    admin_order,
+    pupp,
+    admin,
+    d1,
+    d2,
+    d3,
+    d4,
 };
