@@ -12,6 +12,12 @@ const AddMask = () => {
     const [singleFile, setSingleFile] = useState(undefined);
     const [uploading, setUploading] = useState(false);
 
+    const [titleTouched, setTitleTouched] = useState(false);
+    const [descTouched, setDescTouched] = useState(false);
+
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
+
     const [state, dispatch] = useReducer(addReducer, INITIAL_STATE);
 
     const handleChange = (e) => {
@@ -32,10 +38,6 @@ const AddMask = () => {
             console.log(err);
         }
     };
-
-    const navigate = useNavigate();
-
-    const queryClient = useQueryClient();
 
     const mutation = useMutation({
         mutationFn: (addmask) => {
