@@ -11,6 +11,8 @@
   text-transform: capitalize;
   line-height: 117px;
   font-size: 90px;
+  justify-content: center;
+  text-align: center;
 }
 
 .add .container .sections {

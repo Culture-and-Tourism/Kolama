@@ -26,7 +26,7 @@ export const deleteAddMask = async (req, res, next) => {
         if (newAddMask.userId !== req.userId)
             return next(createError(403, 'You can Delete your Details only!'));
         await AddMask.findByIdAndDelete(req.params.id);
-        res.request.status(200).send('Masks details has been deleted!');
+        res.status(200).send('Masks details has been deleted!');
     } catch (err) {
         next(err);
     }
@@ -64,27 +64,27 @@ export const getAddsMask = async (req, res, next) => {
     }
 };
 
-// //create update selected product
-// export const updateAdds = async (req, res) => {
-//     try {
-//         const productId = req.params.id;
+//create update selected product
+export const updateAddsMask = async (req, res) => {
+    try {
+        const productId = req.params.id;
 
-//         // Find product by ID and update product details
-//         const updatedProduct = await Add.findByIdAndUpdate(
-//             productId,
-//             {
-//                 $set: req.body,
-//             },
-//             { new: true }
-//         );
+        // Find product by ID and update product details
+        const updatedProduct = await AddMask.findByIdAndUpdate(
+            productId,
+            {
+                $set: req.body,
+            },
+            { new: true }
+        );
 
-//         if (!updatedProduct) {
-//             return res.status(404).json({ error: 'product is not found' });
-//         }
+        if (!updatedProduct) {
+            return res.status(404).json({ error: 'product is not found' });
+        }
 
-//         return res.json({ message: 'Product details updated successfully', product: updatedProduct });
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).json({ error: 'Server error' });
-//     }
-// };
+        return res.json({ message: 'Details updated successfully', product: updatedProduct });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Server error' });
+    }
+};

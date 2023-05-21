@@ -12,6 +12,12 @@ const AddMask = () => {
     const [singleFile, setSingleFile] = useState(undefined);
     const [uploading, setUploading] = useState(false);
 
+    const [titleTouched, setTitleTouched] = useState(false);
+    const [descTouched, setDescTouched] = useState(false);
+
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
+
     const [state, dispatch] = useReducer(addReducer, INITIAL_STATE);
 
     const handleChange = (e) => {
@@ -21,8 +27,30 @@ const AddMask = () => {
         });
     };
 
+    const handleTitleBlur = () => {
+        setTitleTouched(true);
+    };
+    const handleDescBlur = () => {
+        setDescTouched(true);
+    };
+
+    const validateForm = () => {
+        if (state.title.trim() === '') {
+            toast.error('Please Enter a Title.');
+            return false;
+        }
+        if (state.desc.trim() === '') {
+            toast.error('Please Enter The Description.');
+            return false;
+        }
+        return true;
+    };
+
     const handleUpload = async () => {
         setUploading(true);
+        toast.success(' Uploading Images', {
+            position: toast.POSITION.TOP_RIGHT,
+        });
         try {
             const cover = await upload(singleFile);
 
@@ -32,10 +60,6 @@ const AddMask = () => {
             console.log(err);
         }
     };
-
-    const navigate = useNavigate();
-
-    const queryClient = useQueryClient();
 
     const mutation = useMutation({
         mutationFn: (addmask) => {
@@ -47,10 +71,16 @@ const AddMask = () => {
     });
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); if (!validateForm()) {
+            return;
+        }
         mutation.mutate(state);
         toast('Details inserted successfully');
         navigate('/viewmask');
+        toast.success('New Mask Added Successfully', {
+            position: toast.POSITION.TOP_RIGHT,
+        });
+
     };
     console.log(state);
     return (
@@ -66,8 +96,15 @@ const AddMask = () => {
                         <input
                             type='text'
                             name='title'
-                            placeholder='e.g.Butha Sanniya'
-                            onChange={handleChange} />
+                            placeholder='e.g.Butha Sanniya' 
+                            value={state.title}
+                            onChange={handleChange}
+                            onBlur={handleTitleBlur}
+                            required
+                        />
+                        {titleTouched && state.title.trim() === '' && (
+                            <p className='error'>Please enter a title.</p>
+                        )}
 
                         <label htmlFor=''>Description</label>
                         <textarea
@@ -77,8 +114,14 @@ const AddMask = () => {
                             cols='0'
                             rows='16'
                             onChange={handleChange}
+                            value={state.desc}
+                            onBlur={handleDescBlur}
+                            required
                         ></textarea>
-
+                        {descTouched && state.desc.trim() === '' && (
+                            <p className='error'>Please Enter The Description.</p>
+                        )}
+                        
                         <div className='images'>
                             <div className='imagesInputs'>
                                 <label>Browse Image</label>

@@ -76,9 +76,6 @@ const Navbar = () => {
       </ul>
 
       <div className='app__navbar-login'>
-        <a href='/' className='p__opensans'>
-          Event Table
-        </a>
 
         {!currentUser && (
           <a href='/login' className='p__opensans'>

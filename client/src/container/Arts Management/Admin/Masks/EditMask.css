@@ -1,7 +1,18 @@
+.add {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  background: linear-gradient(rgb(27, 20, 20), rgba(54, 41, 43, 0.5)),
+    url("../../../../assets/reg-pic.jpg");
+  background-size: cover;
+  /* background-color: rgba(225, 233, 207, 0.2); */
+}
+
 .add .container {
-  margin-top: 10vh;
+  margin-top: 10;
   width: 100%; /* Modify width to 100% for responsiveness */
   max-width: 1400px; /* Add max-width to limit container width */
+  padding: 50px 0px;
 }
 .container .titlep {
   font-family: var(--font-base);
@@ -11,6 +22,10 @@
   text-transform: capitalize;
   line-height: 117px;
   font-size: 90px;
+}
+
+.container .titlep h1 {
+  text-align: center !important;
 }
 
 .add .container .sections {
@@ -66,24 +81,42 @@
   display: none; /* Hide the default file input */
 }
 
+.custom-file-upload {
+  /* Style your custom button as desired */
+  /* Example styles */
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: rgb(135, 136, 54);
+  cursor: pointer;
+}
 #file-upload {
   display: none;
 }
 
 .custom-file-upload {
-  background-color: var(--color-crimson);
-  color: var(--color-black);
-  font-family: var(--font-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 28px;
-  font-size: 20px;
-  border-radius: 1px;
-  border: none;
-  outline: none;
+  /* Customize the button as desired */
+  /* Example styles */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(135, 136, 54);
+  color: #fff;
   cursor: pointer;
-  margin-left: -135px;
-  margin-top: 40px;
+}
+
+.add .container .sections .details button {
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: var(--color-golden);
+  cursor: pointer;
 }
 
 .add .container .sections .details .add {
@@ -101,41 +134,29 @@
   gap: 20px;
 }
 .create {
-  background-color: var(--color-crimson);
-  color: var(--color-black);
-  font-family: var(--font-base);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 28px;
-  font-size: 20px;
-  border-radius: 1px;
+  border-radius: 10px;
   border: none;
-  outline: none;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: var(--color-golden);
   cursor: pointer;
-  margin-bottom: 80px;
 }
-
-span {
+.add .container .sections .details .addedFeatures button {
+  height: 30px;
   font-size: 12px;
-  padding: 3px;
+  font-weight: 400;
+  background: transparent;
   color: red;
-  display: none;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduce the gap between icon and text for smaller screens */
 }
-
-input:invalid[focused="true"] {
-  border: 2px solid red;
-}
-
-input:invalid[focused="true"] ~ span {
-  display: block;
-}
-
-textarea:invalid[focused="true"] {
-  border: 2px solid red;
-}
-
-textarea:invalid[focused="true"] ~ span {
-  display: block;
+.viewImg img {
+  width: 100px;
+  height: 100px;
 }
 
 /* Media Query for Mobile Screens */

@@ -4,7 +4,7 @@ import {
     deleteAddMask,
     getAddMask,
     getAddsMask,
-    // updateAddsKolam,
+    updateAddsMask,
 } from '../controllers/addMask.controller.js';
 import { verifyToken } from '../middleware/jwt.js';
 const router = express.Router();
@@ -22,6 +22,6 @@ router.get('/single/:id', getAddMask);
 router.get('/', getAddsMask);
 
 // //createget all ads route
-// router.put('/:id', verifyToken, updateAddsKolam);
+router.put('/:id', verifyToken, updateAddsMask);
 
 export default router;
