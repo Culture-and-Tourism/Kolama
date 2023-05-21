@@ -33,9 +33,10 @@ import Art from './container/Arts Management/User/Art/Art';
 import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
 import ViewMask from './container/Arts Management/Admin/Masks/ViewMask';
 import KolamDetails from './container/Arts Management/User/Kolam/KolamDetails';
+import EditKolam from './container/Arts Management/Admin/Kolam/EditKolam';
+import EditMask from './container/Arts Management/Admin/Masks/EditMask';
 
 const queryClient = new QueryClient();
-
 
 const App = () => (
   <ShopContextProvider>
@@ -209,6 +210,22 @@ const App = () => (
             element={
               <>
                 <AdminHome />
+              </>
+            }
+          />
+          <Route
+            path='/editkolam/:id'
+            element={
+              <>
+                <EditKolam />
+              </>
+            }
+          />
+          <Route
+            path='/editmask/:id'
+            element={
+              <>
+                <EditMask />
               </>
             }
           />

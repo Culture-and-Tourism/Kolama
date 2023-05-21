@@ -41,6 +41,7 @@ function ViewKolam() {
             }
         });
     };
+    
     const deleteItem = async (id) => {
         try {
             await newRequest.delete(`/addskolam/${id}`);
@@ -55,7 +56,7 @@ function ViewKolam() {
     const navigate = useNavigate();
 
     const handlUpdate = (id) => {
-        navigate("/")
+        navigate(`/editkolam/${id}`);
     }
     return (
 
