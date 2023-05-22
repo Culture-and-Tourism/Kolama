@@ -21,7 +21,7 @@ router.get('/single/:id', getAdd);
 //createget all ads route
 router.get('/', getAdds);
 
-//createget all ads route
+//createget update ads route
 router.put('/:id',verifyToken , updateAdds);
 
 export default router;

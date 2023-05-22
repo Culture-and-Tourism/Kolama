@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import './Login.css';
 import newRequest from '../../utils/newRequest';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -78,6 +78,9 @@ const Login = () => {
             >
               {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
+            <p style={{ color:"red" }}>If You don't have an Account ?
+            <a href="/register" style={{ color:"white" }}> Click Here</a>
+            </p>
           </Form>
         )}
       </Formik>

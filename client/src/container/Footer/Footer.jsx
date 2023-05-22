@@ -20,8 +20,10 @@ const Footer = () => (
 
             <div className="app__footer-links_logo">
                 <img src={images.mask} alt="footer_logo" />
+
                 <p className="p__opensans">&quot;The Sri Lanka Heritage Arts Management System allows individuals to discover their true selves by immersing themselves in the selfless service of preserving and promoting the rich cultural heritage of Sri Lanka.&quot;</p>
                 <img src={images.mainmask} className="spoon__img" alt="" style={{ marginTop: 15 }} />
+
                 <div className="app__footer-links_icons">
                     <FiFacebook />
                     <FiTwitter />

@@ -1,27 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import { ShopContext } from '../../../../context/shop-context';
 
-
 export const CartItem = (props) => {
-  const { id, productName, price, productImage } = props.data;
+  const { _id, title, price, cover } = props.data;
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
     useContext(ShopContext);
+ 
 
   return (
-    <div className="cartItem">
-      <img src={productImage} />
-      <div className="description">
+    <div className='cartItem'>
+      <img src={cover} alt=''/>
+      <div className='description'>
         <p>
-          <b>{productName}</b>
+          <b>{title}</b>
         </p>
         <p> Price: ${price}</p>
-        <div className="countHandler">
-          <button onClick={() => removeFromCart(id)}> - </button>
+        <div className='countHandler'>
+          <button className='minBtn' onClick={() => removeFromCart(_id)}>
+            {' '}
+            min{' '}
+          </button>
+
           <input
-            value={cartItems[id]}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
+            value={cartItems[_id]}
+            onChange={(e) => updateCartItemCount(Number(e.target.value), _id)}
           />
-          <button onClick={() => addToCart(id)}> + </button>
+          <button className='maxBtn' onClick={() => addToCart(_id)}>
+            {' '}
+            max{' '}
+          </button>
         </div>
       </div>
     </div>

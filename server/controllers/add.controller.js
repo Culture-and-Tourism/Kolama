@@ -22,12 +22,21 @@ export const createAdd = async (req, res, next) => {
 export const deleteAdd = async (req, res, next) => {
   try {
     const add = await Add.findById(req.params.id);
+    console.log('1');
+    if (add.userId !== req.userId) {
+      console.log('2');
 
-    if (add.userId !== req.userId)
       return next(createError(403, 'You can Delete your Adds only!'));
+    }
+    console.log('3');
+
     await Add.findByIdAndDelete(req.params.id);
-    res.request.status(200).send('Add has been deleted!');
+    console.log('4');
+
+    res.status(200).send('Add has been deleted!');
   } catch (err) {
+    console.log('4');
+
     next(err);
   }
 };
@@ -42,7 +51,6 @@ export const getAdd = async (req, res, next) => {
     next(err);
   }
 };
-
 
 //get ads acoording to filtering
 export const getAdds = async (req, res, next) => {
@@ -66,12 +74,11 @@ export const getAdds = async (req, res, next) => {
   }
 };
 
-
 //create update selected product
 export const updateAdds = async (req, res) => {
   try {
     const productId = req.params.id;
-    
+
     // Find product by ID and update product details
     const updatedProduct = await Add.findByIdAndUpdate(
       productId,
@@ -85,7 +92,10 @@ export const updateAdds = async (req, res) => {
       return res.status(404).json({ error: 'product is not found' });
     }
 
-    return res.json({ message: 'Product details updated successfully', product: updatedProduct });
+    return res.json({
+      message: 'Product details updated successfully',
+      product: updatedProduct,
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: 'Server error' });
