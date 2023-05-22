@@ -1,0 +1,11 @@
+.card-header2 img{
+    width:890px;
+    height:500px;
+    display:block;
+    margin:0;
+    padding-right: 5px;
+    justify-content: center;
+  }
+ .card-text2{
+    color: aliceblue;
+ }

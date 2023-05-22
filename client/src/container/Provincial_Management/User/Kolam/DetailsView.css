@@ -1,0 +1,64 @@
+ .search_bar {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: rgba(rgb(142, 167, 42), green, blue, alpha);
+    width: max-content;
+    margin-top: 50px;
+    color: var(--heading-color);
+    font-weight: 20px;
+    background-color: rgb(26, 25, 25);
+    margin-left: 100px;
+ }
+ .zero_img-box img {
+   width: 100%;
+padding-left: 100px;
+   height: 100%;
+   align-items: center;
+   object-fit: cover;
+}
+ .form_group span {
+    font-size: 1.8rem;
+    color: rgb(236, 147, 30);
+ }
+
+ .form_group input {
+    border: none;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+ }
+ .form_group input:focus{
+outline:none;
+ }
+ .form-grup h6{
+   margin-bottom:0;
+ }
+ .search_icon i{
+   font-size:2.6;
+   padding:0.5rem;
+   background: var(--primary-color);
+   color: rgb(201, 151, 91);
+  cursor: pointer;
+ }
+ .card_list{
+   padding:50px;
+ }
+ .space{
+  height: 100px;
+  width: 100px;
+ }
+ h1{
+  color: rgb(162, 190, 0);
+  padding-top: 50px;
+ }
+ .btn {
+   margin-left: 270px;
+ }
+ .card-header img{
+   width:420px;
+   height:250px;
+   display:block;
+   margin:0;
+   padding-right: 15px;
+   justify-content: center;
+ }

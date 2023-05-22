@@ -2,8 +2,6 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-
 import Navbar from './components/Navbar/Navbar';
 import Shop from './container/OrderManagement/User/shop/Shop';
 import Cart from './container/OrderManagement/User/ShopingCart/Cart';
@@ -25,6 +23,7 @@ import Add from './container/OrderManagement/Supplier/Add/Add';
 import AddKolam from './container/Arts Management/Admin/Kolam/AddKolam.jsx';
 import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
+import './App.css';
 import Kolam from './container/Arts Management/User/Kolam/Kolam';
 import AddMask from './container/Arts Management/Admin/Masks/AddMask';
 import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
@@ -34,10 +33,20 @@ import Art from './container/Arts Management/User/Art/Art';
 import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
 import ViewMask from './container/Arts Management/Admin/Masks/ViewMask';
 import KolamDetails from './container/Arts Management/User/Kolam/KolamDetails';
-import EditKolam from './container/Arts Management/Admin/Kolam/EditKolam';
-import EditMask from './container/Arts Management/Admin/Masks/EditMask';
+// .................... Start Provicial_Management................
+import DetailsView from './container/Provincial_Management/User/Kolam/DetailsView';
+import PMKolam_Home from './container/Provincial_Management/User/Kolam/Kolam_Home';
+import Sponsor_list from './container/Provincial_Management/User/Kolam/sponsor_list';
+import PMKolam_input from './container/Provincial_Management/User/Kolam/Kolam_input';
+import PMKolam_update from './container/Provincial_Management/User/Kolam/Kolam_update';
+import PM_kolamList from './container/Provincial_Management/Admin/kolam_list';
+import User_input from './container/Provincial_Management/User/Kolam/userSubmitForm';
+import AllDetails from './container/Provincial_Management/User/Kolam/AllDetails';
+// .................... EndProvicial_Management...................
+
 
 const queryClient = new QueryClient();
+
 
 const App = () => (
   <ShopContextProvider>
@@ -192,7 +201,7 @@ const App = () => (
             path='/products/:id'
             element={
               <>
-                <MasksDetails />
+                <MasksDetails/>
                 <Footer />
               </>
             }
@@ -207,6 +216,46 @@ const App = () => (
             }
           />
           <Route
+          path='/PM_Kolam_input'
+          element={
+            <>
+              < PMKolam_input/>
+            
+              <Footer />
+            </>
+          }
+        />
+         <Route
+            path='/userForm'
+            element={
+              <>
+                <User_input/>
+                <Footer />
+              </>
+            }
+          />
+        <Route
+          path='/PM_Kolam_update'
+          element={
+            <>
+              < PMKolam_update/>
+ 
+              <Footer />
+            </>
+          }
+        />
+            <Route
+            path='/PM_Kolam'
+            element={
+              <>
+                < PMKolam_Home/>
+               <DetailsView/>
+               <Sponsor_list/>
+                <Footer />
+              </>
+            }
+          />
+          <Route
             path='/adminhome'
             element={
               <>
@@ -214,19 +263,21 @@ const App = () => (
               </>
             }
           />
-          <Route
-            path='/editkolam/:id'
+           <Route
+            path='/more/:id'
             element={
               <>
-                <EditKolam />
+                <AllDetails  />
+                <Footer />
               </>
             }
           />
-          <Route
-            path='/editmask/:id'
+           <Route
+            path='/PM_KolamList'
             element={
               <>
-                <EditMask />
+            <PM_kolamList/>
+                <Footer />
               </>
             }
           />

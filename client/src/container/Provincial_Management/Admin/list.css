@@ -1,0 +1,33 @@
+.title {
+  font-size: 3rem;
+  color: rgb(224, 177, 19);
+
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+}
+
+.add {
+
+  padding-left: 1200px;
+}
+
+
+div#description {
+  background-color: gray;
+  height: 25%;
+  border: 2px black;
+}
+
+
+.dis{
+ 
+  max-height:10px;
+  width: 200px;
+}
+
+.card-headertext{
+  color: azure;
+}

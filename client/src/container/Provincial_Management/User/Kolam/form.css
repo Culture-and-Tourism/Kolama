@@ -1,0 +1,19 @@
+.formbox{
+    background-color: #0C0C0C;
+    width: 800px;
+    height: 1200px;
+    padding-top: 120px;
+    margin: 0;
+}
+.form_img{
+    width: 600px;
+    height: 1000px;
+    padding-top:o;
+    margin: 0;
+}
+.form-check-label{
+    color: rgb(21, 199, 5);
+}
+.form-label{
+    color: rgb(231, 197, 4);
+}
