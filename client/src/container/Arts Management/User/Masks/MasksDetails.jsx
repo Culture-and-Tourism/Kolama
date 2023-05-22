@@ -24,7 +24,6 @@ const MasksDetails = () => {
         fetchItem();
     }, [id]);
 
-
     return (
         <div className='app__header'>
             {kolam ? (
@@ -44,7 +43,6 @@ const MasksDetails = () => {
                 <h2>Item not found</h2>
             )}
         </div>
-
     );
 };
 
