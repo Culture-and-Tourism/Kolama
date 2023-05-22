@@ -31,7 +31,6 @@ import ProductDetails from './container/OrderManagement/User/ProductDetails/Prod
 
 import Art from './container/Arts Management/User/Art/Art';
 
-import Add from './container/OrderManagement/Supplier/Add/Add';
 import AddKolam from './container/Arts Management/Admin/Kolam/AddKolam.jsx';
 
 import Masks from './container/Arts Management/User/Masks/Masks';
@@ -42,8 +41,6 @@ import AddMask from './container/Arts Management/Admin/Masks/AddMask';
 import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
 import Puppets from './container/Arts Management/User/Puppets/Puppets';
 import MasksDetails from './container/Arts Management/User/Masks/MasksDetails';
-import Art from './container/Arts Management/User/Art/Art';
-import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
 import ViewMask from './container/Arts Management/Admin/Masks/ViewMask';
 import KolamDetails from './container/Arts Management/User/Kolam/KolamDetails';
 import EditKolam from './container/Arts Management/Admin/Kolam/EditKolam';
@@ -202,26 +199,24 @@ const App = () => (
             path='/myproduct'
             element={
               <>
-
                 <MyProduct />
-
-
               </>
             }
           />
           <Route
-
             path='/shop/productdetails/:productId'
             element={
               <>
                 <ProductDetails />
                 <Footer />
-
+               </>
+                }/>
+             <Route
             path='/viewkolam'
             element={
               <>
                 <ViewKolam />
-
+                {/* <Footer /> */}
               </>
             }
           />
