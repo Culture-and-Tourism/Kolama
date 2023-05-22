@@ -2,6 +2,8 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
 import Navbar from './components/Navbar/Navbar';
 import Shop from './container/OrderManagement/User/shop/Shop';
 import Cart from './container/OrderManagement/User/ShopingCart/Cart';
@@ -23,7 +25,6 @@ import Add from './container/OrderManagement/Supplier/Add/Add';
 import AddKolam from './container/Arts Management/Admin/Kolam/AddKolam.jsx';
 import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
-import './App.css';
 import Kolam from './container/Arts Management/User/Kolam/Kolam';
 import AddMask from './container/Arts Management/Admin/Masks/AddMask';
 import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
@@ -191,7 +192,7 @@ const App = () => (
             path='/products/:id'
             element={
               <>
-                <MasksDetails/>
+                <MasksDetails />
                 <Footer />
               </>
             }
