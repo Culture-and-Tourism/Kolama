@@ -78,9 +78,10 @@ const ProductDetails = () => {
                 </h2>
               </div>
               <div className='btnRight'>
-                <button onClick={goBack} className='btn'>
-                  Continue Shopping
-                </button>
+              <button onClick={goBack} style={{ backgroundColor: '#DCCA87' }} className='btn'>
+  Continue Shopping
+</button>
+
               </div>
             </div>
           </div>
