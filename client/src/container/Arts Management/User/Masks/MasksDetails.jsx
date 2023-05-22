@@ -20,7 +20,6 @@ const MasksDetails = () => {
                 setKolam(null); // Handle error case when item is not found
             }
         };
-
         fetchItem();
     }, [id]);
 
