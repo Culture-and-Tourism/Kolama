@@ -21,7 +21,18 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-
+    country: {
+      type: String,
+      required: false,
+    },
+    desc: {
+      type: String,
+      required: false,
+    },
+    phone: {
+      type: String,
+      required: false,
+    },
     isSeller: {
       type: Boolean,
       default: false,

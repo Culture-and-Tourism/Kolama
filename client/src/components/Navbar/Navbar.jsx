@@ -83,7 +83,7 @@ const Navbar = () => {
                     <Link className='link' to='/myproduct'>
                       MyProducts
                     </Link>
-                    <Link className='link' to='/'>
+                    <Link className='link' to='/adminhome'>
                       AdminDashboard
                     </Link>
                     <Link className='link' to='/supplier/add'>
@@ -92,7 +92,7 @@ const Navbar = () => {
                   </>
                 )}
 
-                <Link className='link' to='/'>
+                <Link className='link' to='/userprofile'>
                  User Profile
                 </Link>
                 <Link className='link' onClick={handleLogout}>

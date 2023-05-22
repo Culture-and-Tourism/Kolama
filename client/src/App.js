@@ -19,11 +19,13 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
-import SingleProduct from './container/OrderManagement/User/product/SingleProduct';
+import AdminHome from './container/AdminHome/AdminHome';
+import UserProfile from './container/UserProfile/UserProfile';
+import UpdateProduct from './container/OrderManagement/Supplier/EditProduct/UpdateProduct';
 
 import Add from './container/OrderManagement/Supplier/Add/Add';
 import MyProduct from './container/OrderManagement/Supplier/MyProduct/MyProducts';
-
+import ProductDetails from './container/OrderManagement/User/ProductDetails/ProductDetails';
 
 import './App.css';
 
@@ -73,6 +75,14 @@ const App = () => (
             }
           />
           <Route
+            path='/adminhome'
+            element={
+              <>
+               <AdminHome/>
+              </>
+            }
+          />
+          <Route
             path='/register'
             element={
               <>
@@ -91,6 +101,15 @@ const App = () => (
             }
           />
           <Route
+            path='/userprofile'
+            element={
+              <>
+                <UserProfile />
+                <Footer />
+              </>
+            }
+          />
+          <Route
             path='/supplier/add'
             element={
               <>
@@ -98,7 +117,15 @@ const App = () => (
               </>
             }
           />
-            <Route
+          <Route
+            path='/myproduct/updateproduct/:productId'
+            element={
+              <>
+                <UpdateProduct />
+              </>
+            }
+          />
+          <Route
             path='/myproduct'
             element={
               <>
@@ -107,10 +134,11 @@ const App = () => (
             }
           />
           <Route
-            path='/user/product'
+            path='/shop/productdetails/:productId'
             element={
               <>
-                <SingleProduct />
+                <ProductDetails />
+                <Footer />
               </>
             }
           />

@@ -1,44 +1,59 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../../../../context/shop-context';
 import { CartItem } from './cart-item';
 import './Cart.css';
-import "./shoppingCart.css"
-import { PRODUCTS } from '../../../../products';
-import { useNavigate } from "react-router-dom";
+import './shoppingCart.css';
+// import { PRODUCTS } from '../../../../products';
+import { useNavigate } from 'react-router-dom';
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
-  const totalAmount = getTotalCartAmount();
-
+  const { cartItems, allItems } = useContext(ShopContext);
+  const [totalAmount, setTotalAmount] = useState(0);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log(allItems);
+    allItems.map((product) => {
+      if (cartItems[product._id]) {
+        console.log(product);
+      }
+    });
+  }, []);
+  useEffect(() => {
+	let sum=0;
+	allItems.map((product) => {
+      if (cartItems[product._id]) {
+        sum = sum + product.price*cartItems[product._id]
+      }
+    });
+    setTotalAmount(
+      sum
+    );
+  }, [cartItems]);
+
   return (
-    <div className="cart">
+    <div className='cart'>
       <div>
         <h1>Your Cart Items</h1>
       </div>
-      <div className="cart">
-      {PRODUCTS.map((product) => {
-  if (cartItems[product._id] !== 0) {
-    return <CartItem data={product} />;
-  }
-  return null; // Add this return statement
-})}
-
+      <div className='cart'>
+        {allItems.map((product) => {
+          return cartItems[product._id] && <CartItem data={product} />;
+        })}
       </div>
 
       {totalAmount > 0 ? (
-        <div className="checkout">
+        <div className='checkout'>
           <h4> Subtotal: ${totalAmount} </h4>
-          <button onClick={() => navigate("/shop")}> Continue Shopping </button>
+          <button onClick={() => navigate('/shop')}> Continue Shopping </button>
           <button
             onClick={() => {
-              checkout();
-              navigate("/checkout");
+              // checkout();
+              navigate('/checkout');
             }}
           >
-            {" "}
-            Checkout{" "}
+            {' '}
+            Checkout{' '}
           </button>
         </div>
       ) : (
@@ -48,5 +63,4 @@ export const Cart = () => {
   );
 };
 
-export default Cart;
-
+export default Cart;

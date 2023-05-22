@@ -5,15 +5,20 @@ import upload from '../../../../utils/upload';
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import newRequest from '../../../../utils/newRequest';
-import {  toast } from 'react-toastify';
-
+import { toast } from 'react-toastify';
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [files, setFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
-
   const [state, dispatch] = useReducer(addReducer, INITIAL_STATE);
+  const [titleTouched, setTitleTouched] = useState(false);
+  const [descTouched, setDescTouched] = useState(false);
+  const [shortDescTouched, setShortDescTouched] = useState(false);
+  const [priceTouched, setPriceTouched] = useState(false);
+  const [qtyTouched, setQtyTouched] = useState(false);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const handleChange = (e) => {
     dispatch({
@@ -21,6 +26,50 @@ const Add = () => {
       payload: { name: e.target.name, value: e.target.value },
     });
   };
+  const handleTitleBlur = () => {
+    setTitleTouched(true);
+  };
+  const handleDescBlur = () => {
+    setDescTouched(true);
+  };
+  const handleShortDescBlur = () => {
+    setShortDescTouched(true);
+  };
+  const handlePriceBlur = () => {
+    setPriceTouched(true);
+  };
+  const handleQtyBlur = () => {
+    setQtyTouched(true);
+  };
+  
+  const validateForm = () => {
+    if (state.title.trim() === '') {
+      toast.error('Please Enter a Title.');
+      return false;
+    }
+    if (state.cat.trim() === '') {
+      toast.error('Please select a Category.');
+      return false;
+    }
+    if (state.desc.trim() === '') {
+      toast.error('Please Enter The Description.');
+      return false;
+    }
+    if (state.shortDesc.trim() === '') {
+      toast.error('Please Enter The Short Description.');
+      return false;
+    }
+    if (state.price.trim() === '') {
+      toast.error('Please Enter The Price.');
+      return false;
+    }
+    if (state.availableQuntity.trim() === '') {
+      toast.error('Please Enter The Quantity.');
+      return false;
+    }
+    return true;
+  };
+
   const handleFeature = (e) => {
     e.preventDefault();
     dispatch({
@@ -32,7 +81,7 @@ const Add = () => {
 
   const handleUpload = async () => {
     setUploading(true);
-    toast.success(" Uploaded Successfully", {
+    toast.success(' Uploading Images', {
       position: toast.POSITION.TOP_RIGHT,
     });
     try {
@@ -51,10 +100,6 @@ const Add = () => {
     }
   };
 
-  const navigate = useNavigate();
-
-  const queryClient = useQueryClient();
-
   const mutation = useMutation({
     mutationFn: (add) => {
       return newRequest.post('/adds', add);
@@ -66,9 +111,18 @@ const Add = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+      
+    }
+
     mutation.mutate(state);
     navigate('/myproduct');
+    toast.success(' New Product Added Successfully', {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   };
+
   console.log(state);
   return (
     <div className='add'>
@@ -83,10 +137,17 @@ const Add = () => {
               type='text'
               name='title'
               placeholder='e.g.Puppets and masks of Ambalangoda'
+              value={state.title}
               onChange={handleChange}
+              onBlur={handleTitleBlur}
+              required
             />
+            {titleTouched && state.title.trim() === '' && (
+              <p className='error'>Please enter a title.</p>
+            )}
             <label htmlFor=''>Category</label>
             <select name='cat' id='cat' onChange={handleChange}>
+              <option value='NOT select '>Select Category</option>
               <option value='Masks '>Masks </option>
               <option value='Puppets '>Puppets </option>
               <option value='KolamItems'>Kolam Items</option>
@@ -127,9 +188,20 @@ const Add = () => {
               cols='0'
               rows='16'
               onChange={handleChange}
+              value={state.desc}
+              onBlur={handleDescBlur}
+              required
             ></textarea>
-            <button className='create' onClick={handleSubmit}>
-              Create
+            {descTouched && state.desc.trim() === '' && (
+              <p className='error'>Please Enter The Description.</p>
+            )}
+
+            <button
+              className='create'
+              onClick={handleSubmit}
+              disabled={mutation.isLoading}
+            >
+              {mutation.isLoading ? 'Creating...' : 'Create'}
             </button>
           </div>
           <div className='details'>
@@ -139,6 +211,7 @@ const Add = () => {
               name='shortTitle'
               placeholder='e.g. Ambalangoda'
               onChange={handleChange}
+              
             />
             <label htmlFor=''>Short Description</label>
             <textarea
@@ -148,15 +221,30 @@ const Add = () => {
               placeholder='Short description of your Online service'
               cols='30'
               rows='10'
+              value={state.shortDesc}
+              onBlur={handleShortDescBlur}
+              required
             ></textarea>
+            {shortDescTouched && state.shortDesc.trim() === '' && (
+              <p className='error'>Please Enter The Short Description.</p>
+            )}
             <label htmlFor=''>Delivery Time (e.g. 3 days)</label>
             <input type='number' name='deliveryTime' onChange={handleChange} />
-            <label htmlFor=''>Available Quntity </label>
+            <label htmlFor=''>Available Quantity </label>
             <input
               type='number'
               name='availableQuntity'
+              
               onChange={handleChange}
+              value={state.availableQuntity}
+              onBlur={handleQtyBlur}
+           required
             />
+            {qtyTouched && state.availableQuntity.trim() === '' && (
+              <p className='error'>Please Enter Available Quantity.</p>
+            )}
+
+            
             <label htmlFor=''>Add Specific Features </label>
             <form action='' className='add' onSubmit={handleFeature}>
               <input type='text' placeholder='e.g. Color: Red, Blue' />
@@ -176,14 +264,22 @@ const Add = () => {
                 </div>
               ))}
             </div>
+
+
             <label htmlFor=''>Price (USD)</label>
             <input
               type='number'
-              placeholder='e.g. $ 40.00'
+            
               onChange={handleChange}
               name='price'
-              required
+              placeholder='e.g. $ 40.00'
+              value={state.price}
+              onBlur={handlePriceBlur}
+           required
             />
+             {priceTouched && state.price.trim() === '' && (
+              <p className='error'>Please Enter Price Per Unit.</p>
+            )}
           </div>
         </div>
       </div>

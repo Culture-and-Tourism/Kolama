@@ -6,11 +6,12 @@ export const INITIAL_STATE = {
     // images: [],
     desc: "",
     shortTitle: "",
-    // shortDescc: "",
+     shortDesc: "",
     deliveryTime: 0,
-    availableQuntity: 0,
+    availableQuntity: "",
     features: [],
-    price: 0.00,
+    newFeature: '',
+    price: "",
   };
   
   export const addReducer = (state, action) => {
@@ -31,6 +32,7 @@ export const INITIAL_STATE = {
           ...state,
           features: [...state.features, action.payload],
         };
+        
       case "REMOVE_FEATURE":
         return {
           ...state,

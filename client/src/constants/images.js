@@ -17,6 +17,10 @@ import gallery04 from '../assets/gallery04.jpg';
 import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
+import admin_art from '../assets/admin_art.jpg';
+import admin_pro from '../assets/admin_pro.jpg';
+import admin_event from '../assets/admin_event.jpg';
+import admin_order from '../assets/admin_order.jpg';
 import deleteIconSupplier from '../assets/imgIcons/delete-bin-5-line.png';
 import updateIconSupplier from '../assets/imgIcons/update.png';
 
@@ -39,7 +43,10 @@ export default {
     gallery04,
     gallery05,
     gallery06,
-    findus,
+    findus,  admin_art,
+    admin_pro,
+    admin_event,
+    admin_order,
     deleteIconSupplier,
     updateIconSupplier
 };

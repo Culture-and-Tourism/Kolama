@@ -1,20 +1,20 @@
 import { createContext, useState } from 'react';
 import { PRODUCTS } from '../products';
 
-
-
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
   let cart = {};
   for (let i = 1; i < PRODUCTS.length + 1; i++) {
+    console.log(PRODUCTS);
     cart[i] = 0;
   }
   return cart;
 };
 
 export const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [allItems, setAllItems] = useState([]);
+  const [cartItems, setCartItems] = useState({});
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -36,15 +36,19 @@ export const ShopContextProvider = (props) => {
           i++;
         }
       }
-    console.log(i);
+      console.log(i);
 
       return i;
     }
   };
   const addToCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    console.log(itemId);
+    console.log(allItems);
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: prev.hasOwnProperty(itemId) ? prev[itemId] + 1 : 1,
+    }));
   };
-
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
@@ -56,25 +60,17 @@ export const ShopContextProvider = (props) => {
   const checkout = () => {
     setCartItems(getDefaultCart());
   };
-  // const cartCount = (productName) => {
-  //   let cartCount = 0;
-
-  //   while (productName.length > 0) {
-  //     productName.pop();
-  //     cartCount++;
-  //   }
-  // console.log("cartCount");
-
-  // };
 
   const contextValue = {
-    cartItems,
+    setAllItems,
     addToCart,
     updateCartItemCount,
     removeFromCart,
     getTotalCartAmount,
     checkout,
     countCartItems,
+    cartItems,
+    allItems,
   };
 
   return (

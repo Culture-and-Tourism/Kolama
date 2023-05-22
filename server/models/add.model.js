@@ -51,6 +51,10 @@ const addSchema = new Schema(
       type: String,
       required: false,
     },
+    deliveryTime: {
+      type: String,
+      required: false,
+    },
     features: {
       type: [String],
       required: false,
