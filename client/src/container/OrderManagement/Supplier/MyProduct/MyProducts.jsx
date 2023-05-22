@@ -66,15 +66,15 @@ function MyProducts() {
           'error'
         ) : (
           <div className='container_table'>
-            <div className='table'>
-              <div className='table_header'>
+            <div style={{ marginBottom:"100px", height:"72vw" }} className='table'>
+              <div style={{ marginBottom:"30vh" }} className='table_header'>
                 <h1>Sri Lankan Kolam Products</h1>
                 <Link to='/supplier/add'>
                   <button className='button'>Add New Product</button>
                 </Link>
               </div>
               <div className='table_body'>
-                <table>
+                <table style={{ marginBottom:"10px" }} >
                   <thead>
                     <tr>
                       <th style={{ textAlign: 'center', fontSize: '20px' }}>
