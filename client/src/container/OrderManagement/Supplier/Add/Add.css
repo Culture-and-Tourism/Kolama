@@ -5,15 +5,17 @@
   background: linear-gradient(rgb(27, 20, 20), rgba(54, 41, 43, 0.5)),
     url('../../../../assets/reg-pic.jpg');
   background-size: cover;
-  backdrop-filter: blur(10px);
   /* background-color: rgba(225, 233, 207, 0.2); */
 }
 
 .add .container {
-  margin-top: 10;
+
+
+  margin-top: 10vh;
+
   width: 100%; /* Modify width to 100% for responsiveness */
   max-width: 1400px; /* Add max-width to limit container width */
-  padding: 50px 0px;
+
 }
 .titlep {
   display: flex;
@@ -29,6 +31,7 @@
   margin-left: 10vh;
 }
 .add .container h1 {
+
   width: max-content;
   margin: 30px auto;
   color: rgb(247, 232, 232);
@@ -38,6 +41,7 @@
   justify-content: center !important;
   text-align: center !important; /* Center the text horizontally */
 }
+
 
 .add .container .sections {
   display: flex;
@@ -163,7 +167,7 @@
   border: 1px solid red;
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduce the gap between icon and text for smaller screens */
+  gap: 20px; /* Reduce the gap between icon and text for smaller screens */
 }
 
 /* Media Query for Mobile Screens */

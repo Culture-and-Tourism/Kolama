@@ -1,12 +1,12 @@
 const MenuItems = [
     {
-        title: 'Masks',
-        path: '/mask',
+        title: 'Kolam',
+        path: '/kolam',
         cName: 'dropdown-link'
     }, 
     {
-        title: 'Kolam',
-        path: '/kolam',
+        title: 'Masks',
+        path: '/mask',
         cName: 'dropdown-link'
     },
     {

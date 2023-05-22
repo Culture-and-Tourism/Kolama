@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import addRoute from './routes/add.route.js';
+import addKolamRoute from './routes/addKolam.route.js';
+import addMaskRoute from './routes/addMask.route.js';
 import authRoute from './routes/auth.route.js';
 import userRoute from './routes/user.route.js';
 import eventRoute from './routes/event.route.js';
@@ -31,8 +33,9 @@ app.use(express.json());
 app.use('/api/auth', authRoute); 
 app.use('/api/users', userRoute);
 app.use('/api/adds', addRoute);
-app.use('/api/events', eventRoute);
-app.use('/api/provinces', provinceRoute);
+
+app.use('/api/addskolam', addKolamRoute);
+app.use('/api/addsmask', addMaskRoute);
 
 
 app.use((err, req, res, next) => {

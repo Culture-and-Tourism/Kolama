@@ -7,28 +7,19 @@ import { GiShoppingBag } from 'react-icons/gi';
 import { ShoppingCart } from 'phosphor-react';
 
 import { GiDualityMask } from 'react-icons/gi';
-import { AiOutlineDown } from "react-icons/ai";
 import images from '../../constants/images';
 // import Product from '../../container/OrderManagement/User/shop/product';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import Art from '../../container/Arts Management/User/Art/Art';
-import Masks from '../../container/Arts Management/User/Masks/Masks';
 import Dropdown from '../Dropdown/Dropdown';
-import EventHome from '../../container/EventManagement/Admin/EventHome';
+import DiscoverMenu from '../Dropdown/DiscoverMenu';
+
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
-  // const { productsInCart } = useCart();
-  // const [cartsVisibilty, setCartVisible] = useState(false);
 
 
-  //   const currentUser = {
-  //     id: 1,
-  //     username: 'Anna',
-  //     isSeller: true,
-  //   };
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
   const navigate = useNavigate();
 
@@ -43,6 +34,45 @@ const Navbar = () => {
   console.log(currentUser);
 
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const [discover, setDiscover] = useState(false);
+
+  const onMouseEnter = () => {
+    if(window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onEnter = () => {
+    if (window.innerWidth < 960) {
+      setDiscover(false);
+    } else {
+      setDiscover(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setTimeout(() => {
+        setDropdown(false);
+      }, 2600);
+    };
+  };
+
+  const onLeave = () => {
+    if(window.innerWidth < 960) {
+      setDiscover(false);
+    } else {
+      setTimeout(() => {
+        setDiscover(false);
+      }, 2600);
+    };
+  };
+
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
@@ -52,14 +82,16 @@ const Navbar = () => {
         <li className='p__opensans'>
           <a href='/'>Home</a>
         </li>
-        <li className='p__opensans'>
-          <a href='#arts'>Arts</a>
-        </li>
-        <li className='p__opensans'>
-          <a href='#discover'>Discover</a>
+        <li className='p__opensans' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <a href='/arts'>Arts</a>
+          {dropdown && <Dropdown />}
         </li>
         <li className='p__opensans'>
           <a href='#event'>Event</a>
+        </li>
+        <li className='p__opensans' onMouseEnter={onEnter} onMouseLeave={onLeave}>
+          <a href='#discover'>Discover</a>
+          {discover && <DiscoverMenu />}
         </li>
         <li className='p__opensans'>
           <a href='/shop'>Shop</a>
@@ -67,9 +99,6 @@ const Navbar = () => {
       </ul>
 
       <div className='app__navbar-login'>
-        <a href='/' className='p__opensans'>
-          Event Table
-        </a>
 
         {!currentUser && (
           <a href='/login' className='p__opensans'>
