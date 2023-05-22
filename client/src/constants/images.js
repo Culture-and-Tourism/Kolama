@@ -40,6 +40,13 @@ import d1 from '../assets/d1.png';
 import d2 from '../assets/d2.png';
 import d3 from '../assets/d3.png';
 import d4 from '../assets/d4.png';
+import PMK1 from '../assets/PovincialManagement/main/PMK1.png';
+import PMK2 from '../assets/PovincialManagement/main/PMK2.png';
+import PMK3 from '../assets/PovincialManagement/main/PMK3.jpeg';
+import ava01 from '../assets/PovincialManagement/Sponsor/ava01.jpeg';
+import ava02 from '../assets/PovincialManagement/Sponsor/ava02.jpg'
+import ava03 from '../assets/PovincialManagement/Sponsor/ava03.jpg'
+import ava04 from '../assets/PovincialManagement/Sponsor/ava04.jpg'
 
 
 export default {
@@ -54,6 +61,10 @@ export default {
     map,
     quote,
     team,
+    ava01,
+    ava04,
+    ava02,
+    ava03,
     gallery01,
     gallery02,
     gallery03,
@@ -85,4 +96,6 @@ export default {
     d3,
     d4,
 
-};
+    PMK1,
+    PMK2,
+    PMK3,

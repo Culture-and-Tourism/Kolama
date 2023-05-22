@@ -4,7 +4,7 @@ import {
     deleteAddKolam,
     getAddKolam,
     getAddsKolam,
-    updateAddsKolam,
+    // updateAddsKolam,
 } from '../controllers/addKolam.controller.js';
 import { verifyToken } from '../middleware/jwt.js';
 const router = express.Router();
@@ -22,6 +22,6 @@ router.get('/single/:id', getAddKolam);
 router.get('/', getAddsKolam);
 
 // //createget all ads route
-router.put('/:id', verifyToken, updateAddsKolam);
+// router.put('/:id', verifyToken, updateAddsKolam);
 
 export default router;

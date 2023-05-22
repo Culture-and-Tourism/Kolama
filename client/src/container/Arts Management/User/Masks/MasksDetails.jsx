@@ -20,8 +20,10 @@ const MasksDetails = () => {
                 setKolam(null); // Handle error case when item is not found
             }
         };
+
         fetchItem();
     }, [id]);
+
 
     return (
         <div className='app__header'>
@@ -42,6 +44,7 @@ const MasksDetails = () => {
                 <h2>Item not found</h2>
             )}
         </div>
+
     );
 };
 

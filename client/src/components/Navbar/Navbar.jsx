@@ -12,12 +12,13 @@ import images from '../../constants/images';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from '../Dropdown/Dropdown';
-import DiscoverMenu from '../Dropdown/DiscoverMenu';
 
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
+
+
 
 
   const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -35,7 +36,6 @@ const Navbar = () => {
 
   const [toggleMenu, setToggleMenu] = React.useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const [discover, setDiscover] = useState(false);
 
   const onMouseEnter = () => {
     if(window.innerWidth < 960) {
@@ -45,33 +45,15 @@ const Navbar = () => {
     }
   };
 
-  const onEnter = () => {
-    if (window.innerWidth < 960) {
-      setDiscover(false);
-    } else {
-      setDiscover(true);
-    }
-  };
-
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
+    if(window.innerWidth < 960) {
       setDropdown(false);
     } else {
       setTimeout(() => {
         setDropdown(false);
-      }, 2600);
-    };
-  };
-
-  const onLeave = () => {
-    if(window.innerWidth < 960) {
-      setDiscover(false);
-    } else {
-      setTimeout(() => {
-        setDiscover(false);
-      }, 2600);
-    };
-  };
+      }, 3000);
+    }
+  }
 
   return (
     <nav className='app__navbar'>
@@ -87,11 +69,10 @@ const Navbar = () => {
           {dropdown && <Dropdown />}
         </li>
         <li className='p__opensans'>
-          <a href='#event'>Event</a>
+          <a href='/PM_Kolam'>Discover</a>
         </li>
-        <li className='p__opensans' onMouseEnter={onEnter} onMouseLeave={onLeave}>
-          <a href='#discover'>Discover</a>
-          {discover && <DiscoverMenu />}
+        <li className='p__opensans'>
+          <a href='#event'>Event</a>
         </li>
         <li className='p__opensans'>
           <a href='/shop'>Shop</a>
@@ -99,6 +80,9 @@ const Navbar = () => {
       </ul>
 
       <div className='app__navbar-login'>
+        <a href='/' className='p__opensans'>
+          Event Table
+        </a>
 
         {!currentUser && (
           <a href='/login' className='p__opensans'>

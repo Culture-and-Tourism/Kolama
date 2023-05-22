@@ -1,8 +1,10 @@
 export const INITIAL_STATE = {
     userId: JSON.parse(localStorage.getItem("currentUser"))?._id,
     title: "",
+    cat: "",
+    // cover: "",
+    // images: [],
     desc: "",
-
     shortTitle: "",
      shortDesc: "",
     deliveryTime: 0,
@@ -10,6 +12,7 @@ export const INITIAL_STATE = {
     features: [],
     newFeature: '',
     price: "",
+
 
   };
   
@@ -32,7 +35,7 @@ export const INITIAL_STATE = {
           ...state,
           features: [...state.features, action.payload],
         };
-        
+
       case "REMOVE_FEATURE":
         return {
           ...state,

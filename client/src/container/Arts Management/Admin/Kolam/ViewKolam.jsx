@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 import './ViewKolam.css';
 import { useNavigate } from 'react-router-dom';
 import getCurrentUser from '../../../../utils/getCurrentUser';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import newRequest from '../../../../utils/newRequest';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import IconButton from '@mui/material/IconButton';
-import Swal from 'sweetalert2'; 
+import EditIcon from '@mui/icons-material/Edit';
+import IconButton from '@mui/material/IconButton'; 
+
 function ViewKolam() {
     const currentUser = getCurrentUser();
-    const queryClient = useQueryClient();
 
     const { isLoading, error, data } = useQuery({
         queryKey: ['myProducts'],
@@ -23,39 +22,26 @@ function ViewKolam() {
             }),
     });
 
-    const handleDelete = (id) => {
-        Swal.fire({
-            title: 'Confirm To Delete',
-            text: 'Are You Sure You Want To Delete This Item?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Yes',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                deleteItem(id);
-            }
-        });
-    };
-    
-    const deleteItem = async (id) => {
-        try {
-            await newRequest.delete(`/addskolam/${id}`);
-            queryClient.invalidateQueries(['myProducts']);
+    const mutation = useMutation({
+        mutationFn: (id) => {
+            return newRequest.delete(`/addskolam/${id}`);
+        },
+        onSuccess: () => { 
             toast.success('Item deleted successfully!');
-        } catch (error) {
-            console.log('Error deleting item:', error);
-            toast.error('Error deleting item');
+        },
+    });
+
+    const handleDelete = (id) => {
+        if(window.confirm('Are you sure you want to delete this item?')) {
+            mutation.mutate(id);
         }
     };
-    
+
     const navigate = useNavigate();
 
     const handlUpdate = (id) => {
-        navigate(`/editkolam/${id}`);
+        navigate("/")
     }
-
     return (
 
         <><div className='myProducts'>
@@ -97,7 +83,7 @@ function ViewKolam() {
                                                 <div className="actionBtn">
                                                     <IconButton onClick={() => handleDelete(kolam._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
 
-                                                    <IconButton onClick={() => handlUpdate(kolam._id)}> <EditNoteIcon style={{ color: 'yellow' }} /></IconButton>
+                                                    <IconButton onClick={() => handlUpdate(kolam._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
                                                 </div>
                                             </td>
                                         </tr>
@@ -110,8 +96,7 @@ function ViewKolam() {
                 </div>
             )}
 
-        </div><ToastContainer />
-        </>
+        </div><ToastContainer /></>
     );
 }
 

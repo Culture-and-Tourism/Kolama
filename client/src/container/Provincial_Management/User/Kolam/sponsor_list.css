@@ -1,0 +1,6 @@
+.testimonial p{
+    color: rgb(112, 112, 112);
+}
+.testimonial h5{
+    color: var(--heading-color);
+}
