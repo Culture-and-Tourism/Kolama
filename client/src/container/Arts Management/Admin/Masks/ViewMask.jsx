@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import newRequest from '../../../../utils/newRequest';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 import IconButton from '@mui/material/IconButton';
 import Swal from 'sweetalert2'; 
 
@@ -99,7 +99,7 @@ function ViewMask() {
                                                 <div className="actionBtn">
                                                     <IconButton onClick={() => handleDelete(mask._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
 
-                                                    <IconButton onClick={() => handlUpdate(mask._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
+                                                    <IconButton onClick={() => handlUpdate(mask._id)}> <EditNoteIcon style={{ color: 'yellow' }} /></IconButton>
                                                 </div>
                                             </td>
                                         </tr>

@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import newRequest from '../../../../utils/newRequest';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import EditIcon from '@mui/icons-material/Edit';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 import IconButton from '@mui/material/IconButton';
 import Swal from 'sweetalert2'; 
 function ViewKolam() {
@@ -97,7 +97,7 @@ function ViewKolam() {
                                                 <div className="actionBtn">
                                                     <IconButton onClick={() => handleDelete(kolam._id)}> <DeleteForeverIcon style={{ color: 'red' }} /></IconButton>
 
-                                                    <IconButton onClick={() => handlUpdate(kolam._id)}> <EditIcon style={{ color: 'yellow' }} /></IconButton>
+                                                    <IconButton onClick={() => handlUpdate(kolam._id)}> <EditNoteIcon style={{ color: 'yellow' }} /></IconButton>
                                                 </div>
                                             </td>
                                         </tr>
