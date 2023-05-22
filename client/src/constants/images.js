@@ -66,7 +66,7 @@ export default {
     admin_event,
     admin_order,
     deleteIconSupplier,
-    updateIconSupplier
+    updateIconSupplier,
 
     findus,
     masks_banner,

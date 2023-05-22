@@ -114,7 +114,7 @@ const Navbar = () => {
               }
               alt='pro pic'
             />
-            <span className='username'>{currentUser?.username}</span>
+            <di className='username'>{currentUser?.username}</di>
             {open && (
               <div className='options'>
                 {currentUser?.isSeller && (
