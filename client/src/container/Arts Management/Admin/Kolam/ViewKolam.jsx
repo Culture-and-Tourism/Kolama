@@ -11,10 +11,8 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 import Swal from 'sweetalert2'; 
-
 function ViewKolam() {
     const currentUser = getCurrentUser();
-
     const queryClient = useQueryClient();
 
     const { isLoading, error, data } = useQuery({
@@ -25,7 +23,6 @@ function ViewKolam() {
             }),
     });
 
-   
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Confirm To Delete',
@@ -58,6 +55,7 @@ function ViewKolam() {
     const handlUpdate = (id) => {
         navigate(`/editkolam/${id}`);
     }
+
     return (
 
         <><div className='myProducts'>
@@ -112,7 +110,8 @@ function ViewKolam() {
                 </div>
             )}
 
-        </div><ToastContainer /></>
+        </div><ToastContainer />
+        </>
     );
 }
 
