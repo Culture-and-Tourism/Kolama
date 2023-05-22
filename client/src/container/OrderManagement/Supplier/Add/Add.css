@@ -9,27 +9,40 @@
 }
 
 .add .container {
+
+
   margin-top: 10vh;
+
   width: 100%; /* Modify width to 100% for responsiveness */
   max-width: 1400px; /* Add max-width to limit container width */
 
 }
-.titlep{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.titlep {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  font-family: var(--font-base);
+  color: var(--color-golden);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  line-height: 117px;
+  font-size: 90px;
+  margin-left: 10vh;
 }
 .add .container h1 {
-    width: max-content;
-    margin-bottom: 30px;
-    color: rgb(247, 232, 232);
-    font-weight: 300;
-    font-size: 80px;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important; /* Center the text horizontally */
-  }
-  
+
+  width: max-content;
+  margin: 30px auto;
+  color: rgb(247, 232, 232);
+  font-weight: 300;
+  font-size: 80px;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important; /* Center the text horizontally */
+}
+
+
 .add .container .sections {
   display: flex;
   flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
@@ -97,18 +110,18 @@
   cursor: pointer;
 }
 #file-upload {
-    display: none;
-  }
-  
-  .custom-file-upload {
-    /* Customize the button as desired */
-    /* Example styles */
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgb(135, 136, 54);
-    color: #fff;
-    cursor: pointer;
-  }
+  display: none;
+}
+
+.custom-file-upload {
+  /* Customize the button as desired */
+  /* Example styles */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(135, 136, 54);
+  color: #fff;
+  cursor: pointer;
+}
 
 .add .container .sections .details button {
   border-radius: 10px;

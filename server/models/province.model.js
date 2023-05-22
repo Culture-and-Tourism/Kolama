@@ -1,38 +1,38 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const userSchema = new Schema(
+const provinceSchema = new Schema(
   {
-    username: {
+    userId: {
+      type: String,
+      required: true,
+    },
+    location: {
       type: String,
       required: true,
       unique: true,
+    },
+    cat: {
+      type: String,
+      required: true,
+    },
+    phoneNo: {
+      type: String,
+      required: false,
     },
     email: {
       type: String,
       required: true,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-      required: false,
-    },
-    country: {
-      type: String,
-      required: false,
     },
     desc: {
       type: String,
       required: false,
     },
-    phone: {
+    img: {
       type: String,
       required: false,
     },
+
     isSeller: {
       type: Boolean,
       default: false,
@@ -43,4 +43,4 @@ const userSchema = new Schema(
   }
 );
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model('Province', provinceSchema);

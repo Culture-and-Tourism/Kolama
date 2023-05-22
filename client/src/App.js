@@ -19,8 +19,20 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+
+
+import AdminHome from './container/AdminHome/AdminHome';
+import UserProfile from './container/UserProfile/UserProfile';
+import UpdateProduct from './container/OrderManagement/Supplier/EditProduct/UpdateProduct';
+
 import Add from './container/OrderManagement/Supplier/Add/Add';
+import MyProduct from './container/OrderManagement/Supplier/MyProduct/MyProducts';
+import ProductDetails from './container/OrderManagement/User/ProductDetails/ProductDetails';
+
+import Art from './container/Arts Management/User/Art/Art';
+
 import AddKolam from './container/Arts Management/Admin/Kolam/AddKolam.jsx';
+
 import Masks from './container/Arts Management/User/Masks/Masks';
 import EventHome from './container/EventManagement/Admin/EventHome';
 import './App.css';
@@ -29,8 +41,6 @@ import AddMask from './container/Arts Management/Admin/Masks/AddMask';
 import ViewKolam from './container/Arts Management/Admin/Kolam/ViewKolam';
 import Puppets from './container/Arts Management/User/Puppets/Puppets';
 import MasksDetails from './container/Arts Management/User/Masks/MasksDetails';
-import Art from './container/Arts Management/User/Art/Art';
-import AdminHome from './container/Arts Management/Admin/AdminHome/AdminHome';
 import ViewMask from './container/Arts Management/Admin/Masks/ViewMask';
 import KolamDetails from './container/Arts Management/User/Kolam/KolamDetails';
 // .................... Start Provicial_Management................
@@ -101,6 +111,14 @@ const App = () => (
             }
           />
           <Route
+            path='/adminhome'
+            element={
+              <>
+                <AdminHome />
+              </>
+            }
+          />
+          <Route
             path='/register'
             element={
               <>
@@ -119,7 +137,16 @@ const App = () => (
             }
           />
           <Route
-            path='/add'
+            path='/userprofile'
+            element={
+              <>
+                <UserProfile />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/supplier/add'
             element={
               <>
                 <Add />
@@ -171,20 +198,35 @@ const App = () => (
             }
           />
           <Route
-            path='/event'
+            path='/myproduct/updateproduct/:productId'
             element={
               <>
-                <EventHome />
-
+                <UpdateProduct />
               </>
             }
           />
           <Route
+            path='/myproduct'
+            element={
+              <>
+                <MyProduct />
+              </>
+            }
+          />
+          <Route
+            path='/shop/productdetails/:productId'
+            element={
+              <>
+                <ProductDetails />
+                <Footer />
+               </>
+                }/>
+             <Route
             path='/viewkolam'
             element={
               <>
                 <ViewKolam />
-
+                {/* <Footer /> */}
               </>
             }
           />
@@ -276,10 +318,15 @@ const App = () => (
             path='/PM_KolamList'
             element={
               <>
+
             <PM_kolamList/>
                 <Footer />
+
+                <EditMask />
+
               </>
             }
+           
           />
         </Routes>
       </QueryClientProvider>

@@ -13,7 +13,7 @@ const addSchema = new Schema(
     },
     desc: {
       type: String,
-      required: true,
+      required: false,
     },
     totalStars: {
       type: Number,
@@ -25,15 +25,15 @@ const addSchema = new Schema(
     },
     cat: {
       type: String,
-      required: true,
+      required: false,
     },
     price: {
       type: Number,
-      required: true,
+      required: false,
     },
     cover: {
       type: String,
-      required: true,
+      required: false,
     },
     images: {
       type: [String],
@@ -41,13 +41,17 @@ const addSchema = new Schema(
     },
     availableQuntity: {
       type: Number,
-      required: true,
+      required: false,
     },
     shortTitle: {
       type: String,
-      required: true,
+      required: false,
     },
     shortDesc: {
+      type: String,
+      required: false,
+    },
+    deliveryTime: {
       type: String,
       required: false,
     },

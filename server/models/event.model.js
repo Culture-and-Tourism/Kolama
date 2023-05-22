@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const userSchema = new Schema(
+const eventSchema = new Schema(
   {
-    username: {
+    eventname: {
       type: String,
       required: true,
       unique: true,
@@ -11,9 +11,12 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
-      unique: true,
     },
-    password: {
+    location: {
+      type: String,
+      required: true,
+    },
+    timeduration: {
       type: String,
       required: true,
     },
@@ -21,18 +24,20 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-    country: {
+    place: {
       type: String,
       required: false,
     },
-    desc: {
+    category: {
       type: String,
       required: false,
     },
-    phone: {
-      type: String,
-      required: false,
+    budget: {
+        type: Number,
+        default: 0,
+      required: true,
     },
+
     isSeller: {
       type: Boolean,
       default: false,
@@ -43,4 +48,4 @@ const userSchema = new Schema(
   }
 );
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model('Event', eventSchema);

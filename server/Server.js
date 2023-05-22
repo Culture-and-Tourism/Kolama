@@ -10,6 +10,8 @@ import userRoute from './routes/user.route.js';
 import PMKolam from './routes/PMKolam.route.js';
 
 
+
+
 const app = express();
 dotenv.config();
 
@@ -30,9 +32,11 @@ app.use(express.json());
 app.use('/api/auth', authRoute); 
 app.use('/api/users', userRoute);
 app.use('/api/adds', addRoute);
+
 app.use('/api/addskolam', addKolamRoute);
 app.use('/api/addsmask', addMaskRoute);
 app.use('/api/Pkkolam', PMKolam); 
+
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
@@ -45,4 +49,4 @@ app.use((err, req, res, next) => {
     connect();
     console.log(`backend is running on port number : ${port}`);
   });
-  
+   

@@ -17,15 +17,23 @@ import gallery04 from '../assets/gallery04.jpg';
 import gallery05 from '../assets/gallery05.jpg';
 import gallery06 from '../assets/gallery06.webp';
 import findus from '../assets/findus.jpg';
+
+
 import masks_banner from '../assets/masks_banner.jpg';
 import art from '../assets/art.png';
 import features from '../assets/features.png';
 import dancers from '../assets/dancers.png';
 import devil_dancer from '../assets/devil_dancer.webp';
+
 import admin_art from '../assets/admin_art.jpg';
 import admin_pro from '../assets/admin_pro.jpg';
 import admin_event from '../assets/admin_event.jpg';
 import admin_order from '../assets/admin_order.jpg';
+
+import deleteIconSupplier from '../assets/imgIcons/delete-bin-5-line.png';
+import updateIconSupplier from '../assets/imgIcons/update.png';
+
+
 import pupp from '../assets/pupp.jpg';
 import admin from '../assets/admin.jpeg';
 import d1 from '../assets/d1.png';
@@ -39,6 +47,7 @@ import ava01 from '../assets/PovincialManagement/Sponsor/ava01.jpeg';
 import ava02 from '../assets/PovincialManagement/Sponsor/ava02.jpg'
 import ava03 from '../assets/PovincialManagement/Sponsor/ava03.jpg'
 import ava04 from '../assets/PovincialManagement/Sponsor/ava04.jpg'
+
 
 export default {
     bg,
@@ -62,6 +71,14 @@ export default {
     gallery04,
     gallery05,
     gallery06,
+
+    findus,  admin_art,
+    admin_pro,
+    admin_event,
+    admin_order,
+    deleteIconSupplier,
+    updateIconSupplier,
+
     findus,
     masks_banner,
     art,
@@ -78,7 +95,7 @@ export default {
     d2,
     d3,
     d4,
+
     PMK1,
     PMK2,
     PMK3,
-};
