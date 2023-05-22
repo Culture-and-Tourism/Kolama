@@ -7,8 +7,6 @@ import addKolamRoute from './routes/addKolam.route.js';
 import addMaskRoute from './routes/addMask.route.js';
 import authRoute from './routes/auth.route.js';
 import userRoute from './routes/user.route.js';
-import eventRoute from './routes/event.route.js';
-import provinceRoute from './routes/province.route.js';
 
 
 

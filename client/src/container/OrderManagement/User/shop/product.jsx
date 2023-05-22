@@ -26,7 +26,7 @@ export const Product = (props) => {
     <div className='product'>
       <div className='product' key={_id}>
         <img className='product-image' src={cover} alt={cover} />
-        <h4 className='product-name'>{title}</h4>
+        <h4 className='product-name1'>{title}</h4>
         <RatingStars rating={totalStars} />
 
         <p>{shortDesc}</p>
@@ -35,7 +35,7 @@ export const Product = (props) => {
           <button className='btn' onClick={() => handleDetails(_id)}>Detail</button>
           <button className='btn' style={{ marginTop:"-200px" }} onClick={() => addToCart(_id)}>
             Add To Cart
-           ( <span style={{ color: "red" }}>  {count} </span>)
+           ( <div style={{ color: "red" }}>  {count} </div>)
           </button>
         </div>
       </div>
