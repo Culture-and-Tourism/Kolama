@@ -19,6 +19,7 @@ import { ShopContextProvider } from './context/shop-context';
 import Gallery from './container/Gallery/Gallery';
 import FindUs from './container/FindUs/FindUs';
 import Footer from './container/Footer/Footer';
+
 import AdminHome from './container/AdminHome/AdminHome';
 import UserProfile from './container/UserProfile/UserProfile';
 import UpdateProduct from './container/OrderManagement/Supplier/EditProduct/UpdateProduct';
@@ -26,6 +27,10 @@ import UpdateProduct from './container/OrderManagement/Supplier/EditProduct/Upda
 import Add from './container/OrderManagement/Supplier/Add/Add';
 import MyProduct from './container/OrderManagement/Supplier/MyProduct/MyProducts';
 import ProductDetails from './container/OrderManagement/User/ProductDetails/ProductDetails';
+
+import Art from './container/Arts Management/User/Art/Art';
+import Masks from './container/Arts Management/User/Masks/Masks';
+import EventHome from './container/EventManagement/Admin/EventHome';
 
 import './App.css';
 
@@ -78,7 +83,7 @@ const App = () => (
             path='/adminhome'
             element={
               <>
-               <AdminHome/>
+                <AdminHome />
               </>
             }
           />
@@ -141,6 +146,7 @@ const App = () => (
                 <Footer />
               </>
             }
+           
           />
         </Routes>
       </QueryClientProvider>
